@@ -3,6 +3,8 @@
 #include <iostream>
 #include "RenderWindow.hpp"
 #include "Entity.hpp"
+#include "Ball.hpp"
+#include "tools.hpp"
 
 RenderWindow::RenderWindow(const char *p_title, int p_w, int p_h, float p_scale, SDL_Color p_bg) : window(nullptr), renderer(nullptr), scale(p_scale)
 {
@@ -65,6 +67,14 @@ void RenderWindow::render(Entity &p_entity)
     dst.h = p_entity.getCurrentFrame().h * scale;
 
     SDL_RenderCopy(renderer, p_entity.getTex(), &src, &dst);
+}
+
+void RenderWindow::render(Ball &p_ball, int type)
+{
+    if (type == 0)
+        tools::DrawCircle(renderer, SDL_Point{.x = p_ball.getX() * (int)scale, .y = p_ball.getY() * (int)scale}, p_ball.getRadius() * scale, p_ball.getColor());
+    else if (type == 1)
+        tools::DrawFullCircle(renderer, SDL_Point{.x = p_ball.getX() * (int)scale, .y = p_ball.getY() * (int)scale}, p_ball.getRadius() * scale, p_ball.getColor());
 }
 
 void RenderWindow::display()

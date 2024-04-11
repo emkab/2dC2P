@@ -1,9 +1,25 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <cmath>
 #include "tools.hpp"
 
 namespace tools
 {
+    double normalize(double x)
+    {
+        return x / abs(x);
+    }
+
+    double getDistance(SDL_Point p1, SDL_Point p2)
+    {
+        return sqrt((pow(p2.x - p1.x, 2) + pow(p2.y - p1.y, 2)));
+    }
+
+    double getDistance(int p1, int p2)
+    {
+        return std::max(p1, p2) - std::min(p1, p2);
+    }
+
     SDL_Point get_Size(SDL_Texture *texture)
     {
         SDL_Point size;
@@ -14,5 +30,135 @@ namespace tools
     SDL_Color new_Color(Uint8 p_r, Uint8 p_g, Uint8 p_b, Uint8 p_a)
     {
         return SDL_Color{.r = p_r, .g = p_g, .b = p_b, .a = p_a};
+    }
+
+    // rounding helper, simplified version of the function I use
+    int roundUpToMultipleOfEight(int v)
+    {
+        return (v + (8 - 1)) & -8;
+    }
+
+    void DrawFullCircle(SDL_Renderer *renderer, SDL_Point center, int radius, SDL_Color color)
+    {
+        SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
+        // 35 / 49 is a slightly biased approximation of 1/sqrt(2)
+        const int arrSize = roundUpToMultipleOfEight(radius * 8 * 35 / 49);
+        SDL_Point points[arrSize];
+        int drawCount = 0;
+
+        const int32_t diameter = (radius * 2);
+
+        int32_t x = (radius - 1);
+        int32_t y = 0;
+        int32_t tx = 1;
+        int32_t ty = 1;
+        int32_t error = (tx - diameter);
+
+        while (x >= y)
+        {
+            points[drawCount + 0] = {center.x + x, center.y - y};
+            points[drawCount + 1] = {center.x + x, center.y + y};
+            points[drawCount + 2] = {center.x - x, center.y - y};
+            points[drawCount + 3] = {center.x - x, center.y + y};
+            points[drawCount + 4] = {center.x + y, center.y - x};
+            points[drawCount + 5] = {center.x + y, center.y + x};
+            points[drawCount + 6] = {center.x - y, center.y - x};
+            points[drawCount + 7] = {center.x - y, center.y + x};
+
+            drawCount += 8;
+
+            if (error <= 0)
+            {
+                ++y;
+                error += ty;
+                ty += 2;
+            }
+
+            if (error > 0)
+            {
+                --x;
+                tx += 2;
+                error += (tx - diameter);
+            }
+        }
+
+        // SDL_RenderDrawPoints(renderer, points, drawCount);
+        SDL_RenderDrawLines(renderer, points, drawCount);
+    }
+
+    bool isCollidingCircleX(double x1, int radius1, double x2, int radius2)
+    {
+        if (getDistance(x1, x2) <= radius1 + radius2)
+            return true;
+        return false;
+    }
+
+    bool isCollidingCircleY(double y1, int radius1, double y2, int radius2)
+    {
+        if (getDistance(y1, y2) <= radius1 + radius2)
+            return true;
+        return false;
+    }
+
+    float isCollidingBigCircleX(double x1, int radius1, double x2, int radius2, double distance)
+    {
+        if (distance < radius2 - radius1)
+            return 0;
+        return (x1 - x2);
+    }
+
+    float isCollidingBigCircleY(double y1, int radius1, double y2, int radius2, double distance)
+    {
+        if (distance < radius2 - radius1)
+            return 0;
+        return (y1 - y2);
+    }
+
+    void DrawCircle(SDL_Renderer *renderer, SDL_Point center, int radius, SDL_Color color)
+    {
+        SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
+        // 35 / 49 is a slightly biased approximation of 1/sqrt(2)
+        const int arrSize = roundUpToMultipleOfEight(radius * 8 * 35 / 49);
+        SDL_Point points[arrSize];
+        int drawCount = 0;
+
+        const int32_t diameter = (radius * 2);
+
+        int32_t x = (radius - 1);
+        int32_t y = 0;
+        int32_t tx = 1;
+        int32_t ty = 1;
+        int32_t error = (tx - diameter);
+
+        while (x >= y)
+        {
+            points[drawCount + 0] = {center.x + x, center.y - y};
+            points[drawCount + 1] = {center.x + x, center.y + y};
+            points[drawCount + 2] = {center.x - x, center.y - y};
+            points[drawCount + 3] = {center.x - x, center.y + y};
+            points[drawCount + 4] = {center.x + y, center.y - x};
+            points[drawCount + 5] = {center.x + y, center.y + x};
+            points[drawCount + 6] = {center.x - y, center.y - x};
+            points[drawCount + 7] = {center.x - y, center.y + x};
+
+            drawCount += 8;
+
+            if (error <= 0)
+            {
+                ++y;
+                error += ty;
+                ty += 2;
+            }
+
+            if (error > 0)
+            {
+                --x;
+                tx += 2;
+                error += (tx - diameter);
+            }
+        }
+
+        SDL_RenderDrawPoints(renderer, points, drawCount);
+        // SDL_RenderDrawLines(renderer, points, drawCount);
     }
 }

@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     if (!(IMG_Init(IMG_INIT_PNG)))
         std::cout << "IMG initialization failed: " << SDL_GetError() << std::endl;
 
-    RenderWindow window("2dC2P v1.0", 1280, 720, 4, tools::new_Color(255, 0, 0, 255));
+    RenderWindow window("2dC2P v1.0", 1280, 720, 1, tools::new_Color(0, 0, 0, 255));
     SDL_Rect windowSize = window.getWindowSize();
 
     bool running = true;
@@ -32,8 +32,7 @@ int main(int argc, char *argv[])
     float delta_Time = 0.0;
     int fps = 60;
 
-    scenes::testScene scene(window);
-    // scene.init(window);
+    scenes::ballSimScene scene(window);
 
     while (running == true)
     {
@@ -49,7 +48,7 @@ int main(int argc, char *argv[])
         window.display();
         last_Tick = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
         std::this_thread::sleep_for(milliseconds(1000 / fps));
-        std::cout << "Delta Time: " << delta_Time << " " << now << ", " << last_Tick << std::endl;
+        // std::cout << "Delta Time: " << delta_Time << " " << now << ", " << last_Tick << std::endl;
     }
 
     window.cleanUp();

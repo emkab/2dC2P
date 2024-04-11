@@ -2,6 +2,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include "Entity.hpp"
+#include "Ball.hpp"
 
 class RenderWindow
 {
@@ -14,6 +15,7 @@ public:
     float getScale();
     float setScale(float p_scale);
     void render(Entity &p_entity);
+    void render(Ball &p_ball, int type);
     void display();
 
 private:
