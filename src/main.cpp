@@ -20,17 +20,19 @@ int main(int argc, char *argv[])
     if (!(IMG_Init(IMG_INIT_PNG)))
         std::cout << "IMG initialization failed: " << SDL_GetError() << std::endl;
 
-    RenderWindow window("FLUIDSIM v1.0", 1280, 720, 4);
+    RenderWindow window("FLUIDSIM v1.0", 1280, 720, 4, tools::new_Color(255, 0, 0, 255));
+    SDL_Rect windowSize = window.getWindowSize();
 
     SDL_Texture *dirtTexture = window.loadTexture("res/gfx/ground_dirt.png");
     SDL_Texture *grassTexture = window.loadTexture("res/gfx/ground_grass.png");
     SDL_Texture *onionTexture = window.loadTexture("res/gfx/Onion-Sheet.png");
 
     std::vector<Entity> entities;
+    double floorPoint = (windowSize.h / window.getScale()) - 32;
 
     for (int i = 0; i < 10; i++)
     {
-        entities.emplace_back(Entity(32 * i, 32 * 4.7, grassTexture));
+        entities.emplace_back(Entity(32 * i, floorPoint, grassTexture));
     }
 
     Entity onion(128, 0, onionTexture);
@@ -43,7 +45,7 @@ int main(int argc, char *argv[])
     float delta_Time = 0.0;
     int fps = 60;
 
-    SDL_Point grassTextureSize = tools::getsize(grassTexture);
+    SDL_Point grassTextureSize = tools::get_Size(grassTexture);
 
     while (running == true)
     {
@@ -59,20 +61,19 @@ int main(int argc, char *argv[])
         {
             window.render(entity);
         }
-        if (onion.getY() < 32 * 4.7 - grassTextureSize.y)
-            onion.setYVelocity(onion.getYVelocity() + 0.05);
-        else
+        if (onion.getY() < floorPoint - grassTextureSize.y)
+            onion.setYVelocity(onion.getYVelocity() + (9.8 * delta_Time));
+        onion.updatePosition();
+        if (onion.getY() > floorPoint - grassTextureSize.y)
         {
             onion.setYVelocity(0);
-            onion.setY(32 * 4.7 - grassTextureSize.y);
+            onion.setY(floorPoint - grassTextureSize.y);
         }
-        onion.updatePosition();
         window.render(onion);
         window.display();
         last_Tick = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
         std::this_thread::sleep_for(milliseconds(1000 / fps));
         std::cout << "Delta Time: " << delta_Time << " " << now << ", " << last_Tick << std::endl;
-        std::cout << onion.getY() << ", " << grassTextureSize.y << std::endl;
     }
 
     window.cleanUp();

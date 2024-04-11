@@ -4,8 +4,9 @@
 #include "RenderWindow.hpp"
 #include "Entity.hpp"
 
-RenderWindow::RenderWindow(const char *p_title, int p_w, int p_h, float p_scale) : window(nullptr), renderer(nullptr), scale(p_scale)
+RenderWindow::RenderWindow(const char *p_title, int p_w, int p_h, float p_scale, SDL_Color p_bg) : window(nullptr), renderer(nullptr), scale(p_scale)
 {
+    bg = p_bg;
     window = SDL_CreateWindow(p_title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, p_w, p_h, SDL_WINDOW_SHOWN);
     if (window == nullptr)
         std::cout << "Window initialization failed: " << SDL_GetError() << std::endl;
@@ -31,8 +32,15 @@ void RenderWindow::cleanUp()
 
 void RenderWindow::clear()
 {
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_SetRenderDrawColor(renderer, bg.r, bg.g, bg.b, bg.a);
     SDL_RenderClear(renderer);
+}
+
+SDL_Rect RenderWindow::getWindowSize()
+{
+    SDL_Rect size = SDL_Rect{.x = 0, .y = 0};
+    SDL_GetWindowSize(window, &size.w, &size.h);
+    return size;
 }
 
 float RenderWindow::getScale() { return scale; }

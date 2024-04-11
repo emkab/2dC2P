@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/dev/C++/project/src",
-      "program": "d:/dev/C++/project/src/build/Debug/outDebug",
+      "cwd": "d:/dev/C++/2dC2P/res/gfx",
+      "program": "d:/dev/C++/2dC2P/res/gfx/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
