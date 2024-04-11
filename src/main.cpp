@@ -15,12 +15,12 @@ int main(int argc, char *argv[])
 {
     using namespace std::chrono;
     if (SDL_Init(SDL_INIT_VIDEO) > 0)
-        std::cout << "SDl initialization error: " << SDL_GetError() << std::endl;
+        std::cout << "SDL initialization error: " << SDL_GetError() << std::endl;
 
     if (!(IMG_Init(IMG_INIT_PNG)))
         std::cout << "IMG initialization failed: " << SDL_GetError() << std::endl;
 
-    RenderWindow window("FLUIDSIM v1.0", 1280, 720, 4, tools::new_Color(255, 0, 0, 255));
+    RenderWindow window("2dC2P v1.0", 1280, 720, 4, tools::new_Color(255, 0, 0, 255));
     SDL_Rect windowSize = window.getWindowSize();
 
     SDL_Texture *dirtTexture = window.loadTexture("res/gfx/ground_dirt.png");
