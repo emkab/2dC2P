@@ -5,6 +5,7 @@
 
 namespace tools
 {
+    extern int randomSign();
     extern double normalize(double x);
     extern double getDistance(SDL_Point p1, SDL_Point p2);
     extern double getDistance(int p1, int p2);

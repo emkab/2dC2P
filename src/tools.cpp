@@ -1,10 +1,22 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <cmath>
+#include <cstdlib>
+#include <iostream>
 #include "tools.hpp"
 
 namespace tools
 {
+    int randomSign()
+    {
+        srand((unsigned)time(NULL));
+        int rnd = 1 + (rand() % 2);
+        if (rnd == 1)
+            return 1;
+        else
+            return -1;
+    }
+
     double normalize(double x)
     {
         return x / abs(x);
