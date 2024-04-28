@@ -15,9 +15,6 @@
 *.so
 *.dylib
 *.dll
-# Except Dependent Libraries
-!SDL2.dll
-!SDL2_image.dll
 
 # Fortran module files
 *.mod
@@ -36,3 +33,19 @@
 
 # IDE
 .vscode/
+
+# Except Dependent Libraries
+!SDL2.dll
+!SDL2_image.dll
+
+!libSDL2_image.a
+!libSDL2_image.dll.a
+!libSDL2_image.la
+!libSDL2_test.a
+!libSDL2_test.la
+!libSDL2.a
+!libSDL2.dll.a
+!libSDL2.la
+!libSDL2main.a
+!libSDL2main.la
+
