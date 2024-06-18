@@ -34,6 +34,7 @@ namespace scenes
         ballSimScene(RenderWindow window);
         void tick(RenderWindow window, float delta_Time);
         void addBall(SDL_Point point, int radius, SDL_Color color);
+        void addBall(Ball parent, int radius, SDL_Color color);
 
     private:
         SDL_Rect windowSize;

@@ -114,14 +114,14 @@ namespace tools
 
     float isCollidingBigCircleX(double x1, int radius1, double x2, int radius2, double distance)
     {
-        if (distance < radius2 - radius1)
+        if (distance <= radius2 - radius1)
             return 0;
         return (x1 - x2);
     }
 
     float isCollidingBigCircleY(double y1, int radius1, double y2, int radius2, double distance)
     {
-        if (distance < radius2 - radius1)
+        if (distance <= radius2 - radius1)
             return 0;
         return (y1 - y2);
     }
