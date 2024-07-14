@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdio.h>
+#include <math.h>
 #include <vector>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
@@ -13,27 +15,21 @@
 
 namespace scenes
 {
-    ballSimScene::ballSimScene(RenderWindow window) : e(Ball(0, 0, 10, SDL_Color{.r = 0, .g = 0, .b = 0, .a = 0}))
+    ballSimScene::ballSimScene(RenderWindow window) : circle(Ball(0, 0, 10, SDL_Color{.r = 0, .g = 0, .b = 0, .a = 0}))
     {
         SDL_Rect windowSize = window.getWindowSize();
 
         srand((unsigned)time(NULL));
 
-        floorPoint = (windowSize.h);
+        addBall(windowSize.w / 2, windowSize.h / 3, 15, SDL_Color{.r = 255, .g = 165, .b = 0, .a = 255});
 
-        balls.emplace_back(windowSize.w / 2, windowSize.h / 2, 15, SDL_Color{.r = 255, .g = 165, .b = 0, .a = 255});
-        balls.at(0).setXVelocity((rand() % 5) * tools::randomSign());
-        std::cout << balls.at(0).getXVelocity() << ", " << tools::randomSign() << ", " << rand() << std::endl;
-        balls.at(0).setName("B");
-
-        Ball b1(windowSize.w / 2, windowSize.h / 2, 250, SDL_Color{.r = 139, .g = 0, .b = 139, .a = 255});
-        e = b1;
-
-        dampeningFactor = 0.95;
+        Ball e(windowSize.w / 2, windowSize.h / 2, 250, SDL_Color{.r = 139, .g = 0, .b = 139, .a = 255});
+        circle = e;
     };
 
-    void ballSimScene::tick(RenderWindow window, float delta_Time)
+    void ballSimScene::tick(RenderWindow window, float delta_Time_In)
     {
+        delta_Time = delta_Time_In;
         for (Entity &entity : entities)
         {
             window.render(entity);
@@ -41,55 +37,43 @@ namespace scenes
         int index_x = 0;
         for (Ball &ball : balls)
         {
-            ball.setYVelocity(ball.getYVelocity() + 9.8 * 3 * delta_Time);
 
             int index_y = index_x;
-            for (Ball &ball1 : balls)
-            {
-                if (index_x == index_y)
-                    continue;
-                if (tools::isCollidingCircleX(ball.getX(), ball.getRadius(), ball1.getX(), ball1.getRadius()))
-                {
-                    ball1.setXVelocity(ball1.getXVelocity() + ball.getXVelocity() / 2);
-                    ball.setXVelocity(ball.getXVelocity() * -1 / 2);
-                }
-                if (tools::isCollidingCircleY(ball.getY(), ball.getRadius(), ball1.getY(), ball1.getRadius()))
-                {
-                    ball1.setYVelocity(ball1.getYVelocity() + ball.getYVelocity() / 2);
-                    ball.setYVelocity(ball.getYVelocity() * -1 / 2);
-                }
-                index_y++;
-            }
 
-            double distance = tools::getDistance(SDL_Point{.x = ball.getX(), .y = ball.getY()}, SDL_Point{.x = e.getX(), .y = e.getY()});
-            float collisionX = tools::isCollidingBigCircleX(ball.getX(), ball.getRadius(), e.getX(), e.getRadius(), distance);
-            if (collisionX != 0)
-            {
-                ball.setXVelocity(ball.getXVelocity() * -1 * dampeningFactor);
-                ball.setX(ball.getX() - collisionX * delta_Time);
-            }
-            float collisionY = tools::isCollidingBigCircleY(ball.getY(), ball.getRadius(), e.getY(), e.getRadius(), distance);
-            if (collisionY != 0)
-            {
-                ball.setYVelocity(ball.getYVelocity() * -1 * dampeningFactor);
-                ball.setY(ball.getY() - collisionY * delta_Time);
-            }
-
-            if ((collisionX != 0 || collisionY != 0) && ball.getName() == "B")
-            {
-                addBall(SDL_Point{.x = ball.getX(), .y = ball.getY()}, ball.getRadius(), SDL_Color{.r = 255, .g = 255, .b = 0, .a = 255});
-            }
-
-            ball.updatePosition();
+            collideBall(ball);
+            ball.updatePosition(delta_Time);
+            std::cout << delta_Time << std::endl;
             window.render(ball, 1);
             index_x++;
         }
-        window.render(e, 0);
+        window.render(circle, 0);
     }
 
-    void ballSimScene::addBall(SDL_Point point, int radius, SDL_Color color)
+    void ballSimScene::collideBall(Ball &ball)
     {
-        balls.emplace_back(Ball(point.x, point.y, radius, color));
-        balls.back().setXVelocity(balls.at(0).getXVelocity());
+        int dx = circle.x - ball.x;
+        int dy = circle.y - ball.y;
+
+        float overlap = hypot(dx, dy) - (circle.getRadius() - ball.getRadius());
+        // std::cout << overlap << std::endl;
+
+        if (overlap >= 0)
+        {
+            std::cout << "True" << std::endl;
+            float tangent = atan2(dy, dx);
+            ball.angle = 2 * tangent - ball.angle;
+            ball.speed *= ballConsts::elasticity;
+
+            float angle = 0.5 * M_PI + tangent;
+            ball.x += sin(angle) * overlap;
+            ball.y -= cos(angle) * overlap;
+        }
+    }
+
+    void ballSimScene::addBall(float x, float y, int radius, SDL_Color color)
+    {
+        balls.emplace_back(Ball(x, y, radius, color));
+        balls.back().speed = 0.01;
+        balls.back().angle = M_PI / 2;
     }
 }

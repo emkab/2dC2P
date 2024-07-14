@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <iostream>
 #include "tools.hpp"
+#include <Vector.hpp>
 
 namespace tools
 {
@@ -98,34 +99,6 @@ namespace tools
         SDL_RenderDrawLines(renderer, points, drawCount);
     }
 
-    bool isCollidingCircleX(double x1, int radius1, double x2, int radius2)
-    {
-        if (getDistance(x1, x2) <= radius1 + radius2)
-            return true;
-        return false;
-    }
-
-    bool isCollidingCircleY(double y1, int radius1, double y2, int radius2)
-    {
-        if (getDistance(y1, y2) <= radius1 + radius2)
-            return true;
-        return false;
-    }
-
-    float isCollidingBigCircleX(double x1, int radius1, double x2, int radius2, double distance)
-    {
-        if (distance < radius2 - radius1)
-            return 0;
-        return (x1 - x2);
-    }
-
-    float isCollidingBigCircleY(double y1, int radius1, double y2, int radius2, double distance)
-    {
-        if (distance < radius2 - radius1)
-            return 0;
-        return (y1 - y2);
-    }
-
     void DrawCircle(SDL_Renderer *renderer, SDL_Point center, int radius, SDL_Color color)
     {
         SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
@@ -173,4 +146,15 @@ namespace tools
         SDL_RenderDrawPoints(renderer, points, drawCount);
         // SDL_RenderDrawLines(renderer, points, drawCount);
     }
+
+    Vector addALVectors(Vector v1, Vector v2)
+    {
+        float x = sin(v1.x) * v1.y + sin(v2.x) * v2.y;
+        float y = cos(v1.x) * v1.y + cos(v2.x) * v2.y;
+
+        float length = hypot(x, y);
+        float angle = 0.5 * M_PI - atan2(y, x);
+        return Vector(angle, length);
+    }
+
 }

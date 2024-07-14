@@ -72,9 +72,9 @@ void RenderWindow::render(Entity &p_entity)
 void RenderWindow::render(Ball &p_ball, int type)
 {
     if (type == 0)
-        tools::DrawCircle(renderer, SDL_Point{.x = p_ball.getX() * (int)scale, .y = p_ball.getY() * (int)scale}, p_ball.getRadius() * scale, p_ball.getColor());
+        tools::DrawCircle(renderer, Vector(p_ball.x * (int)scale, p_ball.y * (int)scale).toPoint(), p_ball.getRadius() * scale, p_ball.getColor());
     else if (type == 1)
-        tools::DrawFullCircle(renderer, SDL_Point{.x = p_ball.getX() * (int)scale, .y = p_ball.getY() * (int)scale}, p_ball.getRadius() * scale, p_ball.getColor());
+        tools::DrawFullCircle(renderer, Vector(p_ball.x * (int)scale, p_ball.y * (int)scale).toPoint(), p_ball.getRadius() * scale, p_ball.getColor());
 }
 
 void RenderWindow::display()
