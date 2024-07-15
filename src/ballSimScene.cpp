@@ -16,7 +16,7 @@
 
 namespace scenes
 {
-    ballSimScene::ballSimScene(RenderWindow window, int ballCount, bool randDensity, bool p_momentumLoss) : circle(Ball(0, 0, 10, 1, tools::newColor(0, 0, 0, 0))), momentumLoss(p_momentumLoss)
+    ballSimScene::ballSimScene(RenderWindow window, int ballCount, bool randDensity, int randSpeed, bool p_momentumLoss) : circle(Ball(0, 0, 10, 1, tools::newColor(0, 0, 0, 0))), momentumLoss(p_momentumLoss)
     {
         SDL_Rect windowSize = window.getWindowSize();
 
@@ -26,6 +26,11 @@ namespace scenes
         debugBall = NULL;
 
         addBallGrid(windowSize.w / 2, windowSize.h / 2, 15, 16 * pow(15, 2), ballCount, randDensity, tools::newColor(255, 165, 0, 255));
+        if (randSpeed)
+            for (Ball &ball : balls)
+            {
+                ball.speed = (rand() % randSpeed) + 1;
+            }
 
         Ball e(windowSize.w / 2, windowSize.h / 2, 250, 100, tools::newColor(139, 0, 139, 255));
         circle = e;

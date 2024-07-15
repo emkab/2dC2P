@@ -14,7 +14,7 @@ namespace scenes
     class ballSimScene
     {
     public:
-        ballSimScene(RenderWindow window, int ballCount, bool randDensity, bool p_momentumLoss);
+        ballSimScene(RenderWindow window, int ballCount, bool randDensity, int randSpeed, bool p_momentumLoss);
         void tick(RenderWindow window, float delta_Time, bool gravityToggle);
         void addBall(float x, float y, int radius, float mass, SDL_Color color);
         void addBallGrid(float x, float y, int radius, float mass, int count, bool randDensity, SDL_Color color);

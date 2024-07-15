@@ -14,6 +14,19 @@
 
 int main(int argc, char *argv[])
 {
+    int ballCount = 3;
+    if (argc > 1)
+    {
+        if (std::string(argv[1]) == "-h" | std::string(argv[1]) == "-help" | std::string(argv[1]) == "h" | std::string(argv[1]) == "help")
+        {
+            std::cout << "Argument format:" << std::endl;
+            std::cout << "  ./main.exe ballCount[int] gravity[bool] randDensity[bool] randSpeed[int] momentumLoss[bool]" << std::endl;
+            return 0;
+        }
+        else
+            ballCount = *argv[1] - '0';
+    }
+
     using namespace std::chrono;
     if (SDL_Init(SDL_INIT_VIDEO) > 0)
         std::cout << "SDL initialization error: " << SDL_GetError() << std::endl;
@@ -32,38 +45,49 @@ int main(int argc, char *argv[])
     float delta_Time = 0.0;
     int fps = 60;
 
-    int ballCount = 3;
-    if (argc > 1)
-        ballCount = *argv[1] - '0';
+    bool gravity = true;
+    bool randDensity = true;
+    int randSpeed = 0;
+    bool momentumLoss = true;
 
-    bool gravity;
-    std::string gravity_p(argv[2]);
-    if (gravity_p == "true")
-        gravity = true;
-    else if (gravity_p == "false")
-        gravity = false;
-    else
-        gravity = true;
+    if (argc > 2)
+    {
+        std::string gravity_p(argv[2]);
+        if (gravity_p == "true")
+            gravity = true;
+        else if (gravity_p == "false")
+            gravity = false;
+        else
+            gravity = true;
 
-    bool randDensity;
-    std::string randDensity_p(argv[3]);
-    if (randDensity_p == "true")
-        randDensity = true;
-    else if (randDensity_p == "false")
-        randDensity = false;
-    else
-        randDensity = true;
+        if (argc > 3)
+        {
+            std::string randDensity_p(argv[3]);
+            if (randDensity_p == "true")
+                randDensity = true;
+            else if (randDensity_p == "false")
+                randDensity = false;
+            else
+                randDensity = true;
 
-    bool momentumLoss;
-    std::string momentumLoss_p(argv[3]);
-    if (momentumLoss_p == "true")
-        momentumLoss = true;
-    else if (momentumLoss_p == "false")
-        momentumLoss = false;
-    else
-        momentumLoss = true;
+            if (argc > 4)
+            {
+                randSpeed = *argv[4] - '0';
 
-    scenes::ballSimScene scene(window, ballCount, randDensity, momentumLoss);
+                if (argc > 5)
+                {
+                    std::string momentumLoss_p(argv[5]);
+                    if (momentumLoss_p == "true")
+                        momentumLoss = true;
+                    else if (momentumLoss_p == "false")
+                        momentumLoss = false;
+                    else
+                        momentumLoss = true;
+                }
+            }
+        }
+    }
+    scenes::ballSimScene scene(window, ballCount, randDensity, randSpeed, momentumLoss);
 
     while (running == true)
     {
