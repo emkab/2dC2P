@@ -54,7 +54,16 @@ int main(int argc, char *argv[])
     else
         randDensity = true;
 
-    scenes::ballSimScene scene(window, ballCount, randDensity);
+    bool momentumLoss;
+    std::string momentumLoss_p(argv[3]);
+    if (momentumLoss_p == "true")
+        momentumLoss = true;
+    else if (momentumLoss_p == "false")
+        momentumLoss = false;
+    else
+        momentumLoss = true;
+
+    scenes::ballSimScene scene(window, ballCount, randDensity, momentumLoss);
 
     while (running == true)
     {

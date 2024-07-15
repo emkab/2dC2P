@@ -15,7 +15,7 @@ public:
     int setRadius(int p_radius);
     SDL_Color getColor();
     SDL_Color setColor(SDL_Color p_color);
-    void updatePosition(float delta_Time, bool shouldGravitize);
+    void updatePosition(float delta_Time, bool shouldGravitize, bool momentumLoss);
 
 private:
     std::string name;

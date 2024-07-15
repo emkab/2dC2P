@@ -16,15 +16,15 @@
 
 namespace scenes
 {
-    ballSimScene::ballSimScene(RenderWindow window, int ballCount, bool randDensity) : circle(Ball(0, 0, 10, 1, tools::newColor(0, 0, 0, 0)))
+    ballSimScene::ballSimScene(RenderWindow window, int ballCount, bool randDensity, bool p_momentumLoss) : circle(Ball(0, 0, 10, 1, tools::newColor(0, 0, 0, 0))), momentumLoss(p_momentumLoss)
     {
         SDL_Rect windowSize = window.getWindowSize();
 
         srand((unsigned)time(NULL));
 
-        // addBall(windowSize.w / 2, windowSize.h / 3, 15, tools::newColor(255, 165, 0, 255));
-        // addBall(windowSize.w / 3, windowSize.h / 3, 15, tools::newColor(255, 165, 0, 255));
-        // addBall(windowSize.w / 1.5, windowSize.h / 3, 15, tools::newColor(255, 165, 0, 255));
+        selectedBall = NULL;
+        debugBall = NULL;
+
         addBallGrid(windowSize.w / 2, windowSize.h / 2, 15, 16 * pow(15, 2), ballCount, randDensity, tools::newColor(255, 165, 0, 255));
 
         Ball e(windowSize.w / 2, windowSize.h / 2, 250, 100, tools::newColor(139, 0, 139, 255));
@@ -45,7 +45,7 @@ namespace scenes
             int index_y = index_x + 1;
 
             collideCircle(ball);
-            ball.updatePosition(delta_Time, gravityToggle);
+            ball.updatePosition(delta_Time, gravityToggle, momentumLoss);
 
             if (&ball == selectedBall)
             {
@@ -54,6 +54,12 @@ namespace scenes
                 float dy = mouseY - selectedBall->y;
                 selectedBall->angle = atan2(dy, dx) + 0.5 * M_PI;
                 selectedBall->speed = hypot(dx, dy) * 0.75;
+            }
+
+            if (&ball == debugBall)
+            {
+                std::cout << "X: " << ball.x << ", Y: " << ball.y << std::endl;
+                std::cout << "Angle: " << ball.angle << ", Speed: " << ball.speed << std::endl;
             }
 
             while (index_y < balls.size())
@@ -79,7 +85,8 @@ namespace scenes
         {
             float tangent = atan2(dy, dx);
             ball.angle = 2 * tangent - ball.angle;
-            ball.speed *= ballConsts::elasticity;
+            if (momentumLoss)
+                ball.speed *= ballConsts::elasticity;
 
             float angle = 0.5 * M_PI + tangent;
             ball.x += sin(angle) * overlap;
@@ -107,9 +114,11 @@ namespace scenes
             b2.angle = v2.x;
             b2.angle = v2.y;
 
-            b1.speed *= ballConsts::elasticity;
-            b2.speed *= ballConsts::elasticity;
-
+            if (momentumLoss)
+            {
+                b1.speed *= ballConsts::elasticity;
+                b2.speed *= ballConsts::elasticity;
+            }
             float overlap = 0.5 * (b1.radius + b2.radius - distance + 1);
 
             b1.x += sin(angle) * overlap;
@@ -166,31 +175,62 @@ namespace scenes
 
     void ballSimScene::mouseEvent(SDL_MouseButtonEvent &e)
     {
-        switch (e.state)
+        if (e.button == SDL_BUTTON_LEFT)
         {
-        case SDL_PRESSED:
-        {
-            Ball *b = findBalls(&balls, e.x, e.y);
-            if (b != NULL)
-                selectedBall = b;
-            else
-                break;
-
-            selectedBallOriginalColor = selectedBall->getColor();
-            selectedBall->setColor(tools::newColor(255, 0, 0, 255));
-            break;
-        }
-
-        case SDL_RELEASED:
-        {
-            if (selectedBall != NULL)
+            switch (e.state)
             {
-                selectedBall->setColor(selectedBallOriginalColor);
-                selectedBall = NULL;
+            case SDL_PRESSED:
+            {
+                Ball *b = findBalls(&balls, e.x, e.y);
+                if (b != NULL)
+                    selectedBall = b;
+                else
+                    break;
+
+                selectedBallOriginalColor = selectedBall->getColor();
+                selectedBall->setColor(tools::newColor(255, 0, 0, 255));
                 break;
             }
-            break;
+
+            case SDL_RELEASED:
+            {
+                if (selectedBall != NULL)
+                {
+                    selectedBall->setColor(selectedBallOriginalColor);
+                    selectedBall = NULL;
+                    break;
+                }
+                break;
+            }
+            }
         }
+
+        if (e.button == SDL_BUTTON_RIGHT)
+        {
+            switch (e.state)
+            {
+            case SDL_PRESSED:
+            {
+                if (debugBall == NULL)
+                {
+                    Ball *b = findBalls(&balls, e.x, e.y);
+                    if (b != NULL)
+                        debugBall = b;
+                    else
+                        break;
+
+                    debugBallOriginalColor = debugBall->getColor();
+                    debugBall->setColor(tools::newColor(0, 255, 0, 255));
+                    break;
+                }
+                else
+                {
+                    debugBall->setColor(debugBallOriginalColor);
+                    debugBall = NULL;
+                    break;
+                }
+            }
+            }
         }
     }
 

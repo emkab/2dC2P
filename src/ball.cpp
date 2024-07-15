@@ -33,7 +33,7 @@ SDL_Color Ball::setColor(SDL_Color p_color)
     return color;
 }
 
-void Ball::updatePosition(float delta_Time, bool shouldGravitize)
+void Ball::updatePosition(float delta_Time, bool shouldGravitize, bool momentumLoss)
 {
     x += sin(angle) * speed;
     y -= cos(angle) * speed;
@@ -45,7 +45,8 @@ void Ball::updatePosition(float delta_Time, bool shouldGravitize)
         speed = v.y;
     }
 
-    speed *= drag;
+    if (momentumLoss)
+        speed *= drag;
 }
 
 SDL_Point Ball::getScreenCoords()
