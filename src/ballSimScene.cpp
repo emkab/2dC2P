@@ -3,12 +3,10 @@
 #include <math.h>
 #include <vector>
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <cstdlib>
 #include <chrono>
 
 #include "RenderWindow.hpp"
-#include "Entity.hpp"
 #include "Ball.hpp"
 #include "tools.hpp"
 
@@ -31,10 +29,6 @@ namespace scenes
     void ballSimScene::tick(RenderWindow window, float delta_Time_In)
     {
         delta_Time = delta_Time_In;
-        for (Entity &entity : entities)
-        {
-            window.render(entity);
-        }
         int index_x = 0;
         for (Ball &ball : balls)
         {

@@ -3,11 +3,9 @@
 #include <chrono>
 #include <thread>
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <vector>
 
 #include "RenderWindow.hpp"
-#include "Entity.hpp"
 #include "tools.hpp"
 #include "scenes.hpp"
 #include <unistd.h>
@@ -17,9 +15,6 @@ int main(int argc, char *argv[])
     using namespace std::chrono;
     if (SDL_Init(SDL_INIT_VIDEO) > 0)
         std::cout << "SDL initialization error: " << SDL_GetError() << std::endl;
-
-    if (!(IMG_Init(IMG_INIT_PNG)))
-        std::cout << "IMG initialization failed: " << SDL_GetError() << std::endl;
 
     RenderWindow window("2dC2P v1.0", 1280, 720, 1, tools::new_Color(0, 0, 0, 255));
     SDL_Rect windowSize = window.getWindowSize();

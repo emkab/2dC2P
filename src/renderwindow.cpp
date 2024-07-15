@@ -1,8 +1,6 @@
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
 #include <iostream>
 #include "RenderWindow.hpp"
-#include "Entity.hpp"
 #include "Ball.hpp"
 #include "tools.hpp"
 
@@ -13,18 +11,7 @@ RenderWindow::RenderWindow(const char *p_title, int p_w, int p_h, float p_scale,
     if (window == nullptr)
         std::cout << "Window initialization failed: " << SDL_GetError() << std::endl;
 
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-}
-
-SDL_Texture *RenderWindow::loadTexture(const char *p_filePath)
-{
-    SDL_Texture *texture = nullptr;
-    texture = IMG_LoadTexture(renderer, p_filePath);
-
-    if (texture == nullptr)
-        std::cout << "Failed to load texture " << p_filePath << ": " << SDL_GetError() << std::endl;
-
-    return texture;
+    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 }
 
 void RenderWindow::cleanUp()
@@ -50,23 +37,6 @@ float RenderWindow::setScale(float p_scale)
 {
     scale = p_scale;
     return scale;
-}
-
-void RenderWindow::render(Entity &p_entity)
-{
-    SDL_Rect src;
-    src.x = p_entity.getCurrentFrame().x;
-    src.y = p_entity.getCurrentFrame().y;
-    src.w = p_entity.getCurrentFrame().w;
-    src.h = p_entity.getCurrentFrame().h;
-
-    SDL_Rect dst;
-    dst.x = p_entity.getX() * scale;
-    dst.y = p_entity.getY() * scale;
-    dst.w = p_entity.getCurrentFrame().w * scale;
-    dst.h = p_entity.getCurrentFrame().h * scale;
-
-    SDL_RenderCopy(renderer, p_entity.getTex(), &src, &dst);
 }
 
 void RenderWindow::render(Ball &p_ball, int type)
