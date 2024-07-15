@@ -32,7 +32,11 @@ int main(int argc, char *argv[])
     float delta_Time = 0.0;
     int fps = 60;
 
-    scenes::ballSimScene scene(window);
+    bool gravity = true;
+    if (argv[0])
+        gravity = argv[0];
+
+    scenes::ballSimScene scene(window, gravity);
 
     while (running == true)
     {

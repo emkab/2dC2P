@@ -7,8 +7,9 @@
 #include <Ball.hpp>
 #include <tools.hpp>
 
-Ball::Ball(int p_x, int p_y, int p_radius, SDL_Color p_color) : x(p_x), y(p_y), radius(p_radius), color(p_color)
+Ball::Ball(int p_x, int p_y, int p_radius, float p_mass, SDL_Color p_color) : x(p_x), y(p_y), radius(p_radius), mass(p_mass), color(p_color)
 {
+    drag = pow(mass / (mass + ballConsts::massOfAir), radius);
 }
 
 int Ball::getRadius()
@@ -32,15 +33,19 @@ SDL_Color Ball::setColor(SDL_Color p_color)
     return color;
 }
 
-void Ball::updatePosition(float delta_Time)
+void Ball::updatePosition(float delta_Time, bool shouldGravitize)
 {
-    Vector gravity = Vector(ballConsts::gravity.x, ballConsts::gravity.y * delta_Time);
     x += sin(angle) * speed;
     y -= cos(angle) * speed;
-    Vector v = tools::addALVectors(Vector(angle, speed), gravity);
-    angle = v.x;
-    speed = v.y;
-    speed *= ballConsts::drag;
+    if (shouldGravitize)
+    {
+        Vector gravity = Vector(ballConsts::gravity.x, ballConsts::gravity.y * delta_Time);
+        Vector v = tools::addALVectors(Vector(angle, speed), gravity);
+        angle = v.x;
+        speed = v.y;
+    }
+
+    speed *= drag;
 }
 
 SDL_Point Ball::getScreenCoords()

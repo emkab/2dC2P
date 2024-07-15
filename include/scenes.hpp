@@ -14,10 +14,10 @@ namespace scenes
     class ballSimScene
     {
     public:
-        ballSimScene(RenderWindow window);
+        ballSimScene(RenderWindow window, bool gravity);
         void tick(RenderWindow window, float delta_Time);
-        void addBall(float x, float y, int radius, SDL_Color color);
-        void addBallGrid(float x, float y, int radius, int count, SDL_Color color);
+        void addBall(float x, float y, int radius, float mass, SDL_Color color);
+        void addBallGrid(float x, float y, int radius, float mass, int count, bool randDensity, SDL_Color color);
         void mouseEvent(SDL_MouseButtonEvent &e);
 
     private:
@@ -28,6 +28,7 @@ namespace scenes
         void collide(Ball &b1, Ball &b2);
         Ball *findBalls(std::vector<Ball> *balls, float x, float y);
         Ball *selectedBall;
+        SDL_Color selectedBallOriginalColor;
         int mouseX, mouseY;
         float delta_Time;
         double dampeningFactor;

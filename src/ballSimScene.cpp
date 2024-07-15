@@ -16,7 +16,7 @@
 
 namespace scenes
 {
-    ballSimScene::ballSimScene(RenderWindow window) : circle(Ball(0, 0, 10, tools::newColor(0, 0, 0, 0)))
+    ballSimScene::ballSimScene(RenderWindow window, bool gravity) : circle(Ball(0, 0, 10, 1, tools::newColor(0, 0, 0, 0)))
     {
         SDL_Rect windowSize = window.getWindowSize();
 
@@ -25,9 +25,9 @@ namespace scenes
         // addBall(windowSize.w / 2, windowSize.h / 3, 15, tools::newColor(255, 165, 0, 255));
         // addBall(windowSize.w / 3, windowSize.h / 3, 15, tools::newColor(255, 165, 0, 255));
         // addBall(windowSize.w / 1.5, windowSize.h / 3, 15, tools::newColor(255, 165, 0, 255));
-        addBallGrid(windowSize.w / 2, windowSize.h / 2, 15, 3, tools::newColor(255, 165, 0, 255));
+        addBallGrid(windowSize.w / 2, windowSize.h / 2, 15, 3, 3, gravity, tools::newColor(255, 165, 0, 255));
 
-        Ball e(windowSize.w / 2, windowSize.h / 2, 250, tools::newColor(139, 0, 139, 255));
+        Ball e(windowSize.w / 2, windowSize.h / 2, 250, 100, tools::newColor(139, 0, 139, 255));
         circle = e;
     };
 
@@ -45,7 +45,7 @@ namespace scenes
             int index_y = index_x + 1;
 
             collideCircle(ball);
-            ball.updatePosition(delta_Time);
+            ball.updatePosition(delta_Time, false);
 
             if (&ball == selectedBall)
             {
@@ -95,32 +95,40 @@ namespace scenes
         float distance = hypot(dx, dy);
         if (distance < b1.radius + b2.radius)
         {
-
             float tangent = atan2(dy, dx);
-            b1.angle = 2 * tangent - b1.angle;
-            b2.angle = 2 * tangent - b2.angle;
-            (b1.speed, b2.speed) = (b2.speed, b1.speed);
+            float angle = 0.5 * M_PI + tangent;
+            float total_mass = b1.mass + b2.mass;
+
+            Vector v1 = tools::addALVectors(Vector(b1.angle, b1.speed * (b1.mass - b2.mass) / total_mass), Vector(angle, 2 * b2.speed * b2.mass / total_mass));
+            b1.angle = v1.x;
+            b1.speed = v1.y;
+
+            Vector v2 = tools::addALVectors(Vector(b2.angle, b2.speed * (b2.mass - b1.mass) / total_mass), Vector(angle + M_PI, 2 * b1.speed * b1.mass / total_mass));
+            b2.angle = v2.x;
+            b2.angle = v2.y;
+
             b1.speed *= ballConsts::elasticity;
             b2.speed *= ballConsts::elasticity;
 
-            float angle = 0.5 * M_PI + tangent;
-            b1.x += sin(angle);
-            b1.y -= cos(angle);
-            b2.x -= sin(angle);
-            b2.y += cos(angle);
+            float overlap = 0.5 * (b1.radius + b2.radius - distance + 1);
+
+            b1.x += sin(angle) * overlap;
+            b1.y -= cos(angle) * overlap;
+            b2.x -= sin(angle) * overlap;
+            b2.y += cos(angle) * overlap;
         }
     }
 
-    void ballSimScene::addBall(float x, float y, int radius, SDL_Color color)
+    void ballSimScene::addBall(float x, float y, int radius, float mass, SDL_Color color)
     {
-        balls.emplace_back(Ball(x, y, radius, color));
+        balls.emplace_back(Ball(x, y, radius, mass, color));
         balls.back().speed = 0.01;
         balls.back().angle = M_PI / 2;
     }
 
-    void ballSimScene::addBallGrid(float x, float y, int radius, int count, SDL_Color color)
+    void ballSimScene::addBallGrid(float x, float y, int radius, float mass, int count, bool randDensity, SDL_Color color)
     {
-        int spacing = radius / 5;
+        int spacing = radius / 2;
 
         int width = ((count * (radius * 2)) / 3);
         x -= width + spacing;
@@ -130,7 +138,16 @@ namespace scenes
         int j = 0;
         while (i < count * count)
         {
-            addBall(x, y, radius, color);
+            if (!randDensity)
+                addBall(x, y, radius, mass, color);
+            else
+            {
+                int rad = (rand() % 10) + 11;
+                spacing = rad / 2;
+                int density = (rand() % 20) + 1;
+                color = tools::newColor(200 - density * 10, 200 - density * 10, 255, 255);
+                addBall(x, y, rad, density * pow(rad, 2), color);
+            }
             if (j != count - 1)
             {
                 x += (radius * 2) + spacing;
@@ -159,6 +176,7 @@ namespace scenes
             else
                 break;
 
+            selectedBallOriginalColor = selectedBall->getColor();
             selectedBall->setColor(tools::newColor(255, 0, 0, 255));
             break;
         }
@@ -167,7 +185,7 @@ namespace scenes
         {
             if (selectedBall != NULL)
             {
-                selectedBall->setColor(tools::newColor(255, 165, 0, 255));
+                selectedBall->setColor(selectedBallOriginalColor);
                 selectedBall = NULL;
                 break;
             }
