@@ -20,7 +20,11 @@ int main(int argc, char *argv[])
         if (std::string(argv[1]) == "-h" | std::string(argv[1]) == "-help" | std::string(argv[1]) == "h" | std::string(argv[1]) == "help")
         {
             std::cout << "Argument format:" << std::endl;
-            std::cout << "  ./main.exe ballCount[int] gravity[bool] randDensity[bool] randSpeed[int] momentumLoss[bool]" << std::endl;
+            std::cout << "--  ./main.exe ballCount[int] gravity[bool] randDensity[bool] randSpeed[int] momentumLoss[bool]" << std::endl;
+            std::cout << "In-game keybinds:" << std::endl;
+            std::cout << "--  Left-Click: Grab ball" << std::endl;
+            std::cout << "--  Middle-Click: Select debug ball (Only marks ball as green and slows performence.)" << std::endl;
+            std::cout << "--  Right-Click: Toggle gravity" << std::endl;
             return 0;
         }
         else
