@@ -25,7 +25,7 @@ namespace scenes
         // addBall(windowSize.w / 2, windowSize.h / 3, 15, tools::newColor(255, 165, 0, 255));
         // addBall(windowSize.w / 3, windowSize.h / 3, 15, tools::newColor(255, 165, 0, 255));
         // addBall(windowSize.w / 1.5, windowSize.h / 3, 15, tools::newColor(255, 165, 0, 255));
-        addBallGrid(windowSize.w / 2, windowSize.h / 2, 15, 45, ballCount, randDensity, tools::newColor(255, 165, 0, 255));
+        addBallGrid(windowSize.w / 2, windowSize.h / 2, 15, 16 * pow(15, 2), ballCount, randDensity, tools::newColor(255, 165, 0, 255));
 
         Ball e(windowSize.w / 2, windowSize.h / 2, 250, 100, tools::newColor(139, 0, 139, 255));
         circle = e;
