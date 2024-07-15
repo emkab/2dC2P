@@ -32,11 +32,6 @@ int main(int argc, char *argv[])
     float delta_Time = 0.0;
     int fps = 60;
 
-    for (int i = 0; i < argc; i++)
-    {
-        std::cout << i << ": " << argv[i] << std::endl;
-    }
-
     int ballCount = 3;
     if (argc > 1)
         ballCount = *argv[1] - '0';
@@ -58,8 +53,6 @@ int main(int argc, char *argv[])
         randDensity = false;
     else
         randDensity = true;
-
-    std::cout << gravity << ", " << randDensity << std::endl;
 
     scenes::ballSimScene scene(window, ballCount, randDensity);
 
