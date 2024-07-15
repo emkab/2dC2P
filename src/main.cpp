@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
             }
         }
     }
-    scenes::ballSimScene scene(window, ballCount, randDensity, randSpeed, momentumLoss);
+    scenes::ballSimScene scene(window, ballCount, gravity, randDensity, randSpeed, momentumLoss);
 
     while (running == true)
     {
@@ -111,7 +111,7 @@ int main(int argc, char *argv[])
             }
         }
         window.clear();
-        scene.tick(window, delta_Time, gravity);
+        scene.tick(window, delta_Time);
         window.display();
         last_Tick = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
         std::this_thread::sleep_for(milliseconds(1000 / fps));

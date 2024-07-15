@@ -14,8 +14,8 @@ namespace scenes
     class ballSimScene
     {
     public:
-        ballSimScene(RenderWindow window, int ballCount, bool randDensity, int randSpeed, bool p_momentumLoss);
-        void tick(RenderWindow window, float delta_Time, bool gravityToggle);
+        ballSimScene(RenderWindow window, int ballCount, bool p_gravityToggle, bool randDensity, int randSpeed, bool p_momentumLoss);
+        void tick(RenderWindow window, float delta_Time);
         void addBall(float x, float y, int radius, float mass, SDL_Color color);
         void addBallGrid(float x, float y, int radius, float mass, int count, bool randDensity, SDL_Color color);
         void mouseEvent(SDL_MouseButtonEvent &e);
@@ -33,6 +33,6 @@ namespace scenes
         float delta_Time;
         double dampeningFactor;
         Ball circle;
-        bool momentumLoss;
+        bool momentumLoss, gravityToggle;
     };
 }

@@ -16,7 +16,7 @@
 
 namespace scenes
 {
-    ballSimScene::ballSimScene(RenderWindow window, int ballCount, bool randDensity, int randSpeed, bool p_momentumLoss) : circle(Ball(0, 0, 10, 1, tools::newColor(0, 0, 0, 0))), momentumLoss(p_momentumLoss)
+    ballSimScene::ballSimScene(RenderWindow window, int ballCount, bool p_gravityToggle, bool randDensity, int randSpeed, bool p_momentumLoss) : circle(Ball(0, 0, 10, 1, tools::newColor(0, 0, 0, 0))), gravityToggle(p_gravityToggle), momentumLoss(p_momentumLoss)
     {
         SDL_Rect windowSize = window.getWindowSize();
 
@@ -36,7 +36,7 @@ namespace scenes
         circle = e;
     };
 
-    void ballSimScene::tick(RenderWindow window, float delta_Time_In, bool gravityToggle)
+    void ballSimScene::tick(RenderWindow window, float delta_Time_In)
     {
         delta_Time = delta_Time_In;
         for (Entity &entity : entities)
@@ -211,6 +211,18 @@ namespace scenes
         }
 
         if (e.button == SDL_BUTTON_RIGHT)
+        {
+            switch (e.state)
+            {
+            case SDL_PRESSED:
+            {
+                gravityToggle = !gravityToggle;
+                break;
+            }
+            }
+        }
+
+        if (e.button == SDL_BUTTON_MIDDLE)
         {
             switch (e.state)
             {
