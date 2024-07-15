@@ -40,7 +40,7 @@ namespace tools
         return size;
     }
 
-    SDL_Color new_Color(Uint8 p_r, Uint8 p_g, Uint8 p_b, Uint8 p_a)
+    SDL_Color newColor(Uint8 p_r, Uint8 p_g, Uint8 p_b, Uint8 p_a)
     {
         return SDL_Color{.r = p_r, .g = p_g, .b = p_b, .a = p_a};
     }

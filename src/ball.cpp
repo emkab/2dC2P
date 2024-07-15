@@ -35,15 +35,12 @@ SDL_Color Ball::setColor(SDL_Color p_color)
 void Ball::updatePosition(float delta_Time)
 {
     Vector gravity = Vector(ballConsts::gravity.x, ballConsts::gravity.y * delta_Time);
-    std::cout << angle << ", " << speed << ", " << delta_Time << std::endl;
     x += sin(angle) * speed;
     y -= cos(angle) * speed;
     Vector v = tools::addALVectors(Vector(angle, speed), gravity);
     angle = v.x;
     speed = v.y;
     speed *= ballConsts::drag;
-
-    // std::cout << angle << ", " << speed << std::endl;
 }
 
 SDL_Point Ball::getScreenCoords()

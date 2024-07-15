@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     if (!(IMG_Init(IMG_INIT_PNG)))
         std::cout << "IMG initialization failed: " << SDL_GetError() << std::endl;
 
-    RenderWindow window("2dC2P v1.0", 1280, 720, 1, tools::new_Color(0, 0, 0, 255));
+    RenderWindow window("2dC2P v1.0", 1280, 720, 1, tools::newColor(0, 0, 0, 255));
     SDL_Rect windowSize = window.getWindowSize();
 
     bool running = true;
@@ -40,15 +40,26 @@ int main(int argc, char *argv[])
         delta_Time = (now - last_Tick) / 1000.0;
         while (SDL_PollEvent(&event))
         {
-            if (event.type == SDL_QUIT)
+            switch (event.type)
+            {
+            case SDL_QUIT:
                 running = false;
+                break;
+
+            case SDL_MOUSEBUTTONDOWN:
+                scene.mouseEvent(event.button);
+                break;
+
+            case SDL_MOUSEBUTTONUP:
+                scene.mouseEvent(event.button);
+                break;
+            }
         }
         window.clear();
         scene.tick(window, delta_Time);
         window.display();
         last_Tick = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
         std::this_thread::sleep_for(milliseconds(1000 / fps));
-        // std::cout << "Delta Time: " << delta_Time << " " << now << ", " << last_Tick << std::endl;
     }
 
     window.cleanUp();
