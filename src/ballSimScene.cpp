@@ -16,7 +16,7 @@
 
 namespace scenes
 {
-    ballSimScene::ballSimScene(RenderWindow window, bool gravity) : circle(Ball(0, 0, 10, 1, tools::newColor(0, 0, 0, 0)))
+    ballSimScene::ballSimScene(RenderWindow window, int ballCount, bool randDensity) : circle(Ball(0, 0, 10, 1, tools::newColor(0, 0, 0, 0)))
     {
         SDL_Rect windowSize = window.getWindowSize();
 
@@ -25,13 +25,13 @@ namespace scenes
         // addBall(windowSize.w / 2, windowSize.h / 3, 15, tools::newColor(255, 165, 0, 255));
         // addBall(windowSize.w / 3, windowSize.h / 3, 15, tools::newColor(255, 165, 0, 255));
         // addBall(windowSize.w / 1.5, windowSize.h / 3, 15, tools::newColor(255, 165, 0, 255));
-        addBallGrid(windowSize.w / 2, windowSize.h / 2, 15, 3, 3, gravity, tools::newColor(255, 165, 0, 255));
+        addBallGrid(windowSize.w / 2, windowSize.h / 2, 15, 45, ballCount, randDensity, tools::newColor(255, 165, 0, 255));
 
         Ball e(windowSize.w / 2, windowSize.h / 2, 250, 100, tools::newColor(139, 0, 139, 255));
         circle = e;
     };
 
-    void ballSimScene::tick(RenderWindow window, float delta_Time_In)
+    void ballSimScene::tick(RenderWindow window, float delta_Time_In, bool gravityToggle)
     {
         delta_Time = delta_Time_In;
         for (Entity &entity : entities)
@@ -45,7 +45,7 @@ namespace scenes
             int index_y = index_x + 1;
 
             collideCircle(ball);
-            ball.updatePosition(delta_Time, false);
+            ball.updatePosition(delta_Time, gravityToggle);
 
             if (&ball == selectedBall)
             {

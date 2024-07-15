@@ -32,11 +32,36 @@ int main(int argc, char *argv[])
     float delta_Time = 0.0;
     int fps = 60;
 
-    bool gravity = true;
-    if (argv[0])
-        gravity = argv[0];
+    for (int i = 0; i < argc; i++)
+    {
+        std::cout << i << ": " << argv[i] << std::endl;
+    }
 
-    scenes::ballSimScene scene(window, gravity);
+    int ballCount = 3;
+    if (argc > 1)
+        ballCount = *argv[1] - '0';
+
+    bool gravity;
+    std::string gravity_p(argv[2]);
+    if (gravity_p == "true")
+        gravity = true;
+    else if (gravity_p == "false")
+        gravity = false;
+    else
+        gravity = true;
+
+    bool randDensity;
+    std::string randDensity_p(argv[3]);
+    if (randDensity_p == "true")
+        randDensity = true;
+    else if (randDensity_p == "false")
+        randDensity = false;
+    else
+        randDensity = true;
+
+    std::cout << gravity << ", " << randDensity << std::endl;
+
+    scenes::ballSimScene scene(window, ballCount, randDensity);
 
     while (running == true)
     {
@@ -60,7 +85,7 @@ int main(int argc, char *argv[])
             }
         }
         window.clear();
-        scene.tick(window, delta_Time);
+        scene.tick(window, delta_Time, gravity);
         window.display();
         last_Tick = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
         std::this_thread::sleep_for(milliseconds(1000 / fps));
