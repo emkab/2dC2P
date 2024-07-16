@@ -4,6 +4,7 @@
 #include <vector>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 
 #include "RenderWindow.hpp"
 #include "Entity.hpp"
@@ -34,5 +35,6 @@ namespace scenes
         double dampeningFactor;
         Ball circle;
         bool momentumLoss, gravityToggle;
+        TTF_Font *font;
     };
 }

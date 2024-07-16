@@ -157,4 +157,9 @@ namespace tools
         return Vector(angle, length);
     }
 
+    void tools::write(std::string text, int x, int y, SDL_Color color, TTF_Font *font)
+    {
+        // Unimplented for efficiency sake.
+    }
+
 }

@@ -2,6 +2,7 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 
 #include <Vector.hpp>
 
@@ -16,4 +17,5 @@ namespace tools
     extern void DrawCircle(SDL_Renderer *renderer, SDL_Point center, int radius, SDL_Color color);
     extern void DrawFullCircle(SDL_Renderer *renderer, SDL_Point center, int radius, SDL_Color color);
     extern Vector addALVectors(Vector v1, Vector v2);
+    extern void write(std::string text, int x, int y, SDL_Color color, TTF_Font *font);
 }
