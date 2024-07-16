@@ -228,27 +228,40 @@ namespace scenes
             {
             case SDL_PRESSED:
             {
-                if (debugBall == NULL)
-                {
-                    Ball *b = findBalls(&balls, e.x, e.y);
-                    if (b != NULL)
-                        debugBall = b;
-                    else
-                        break;
-
-                    debugBallOriginalColor = debugBall->getColor();
-                    debugBall->setColor(tools::newColor(0, 255, 0, 255));
-                    break;
-                }
-                else
-                {
-                    debugBall->setColor(debugBallOriginalColor);
-                    debugBall = NULL;
-                    break;
-                }
+                momentumLoss = !momentumLoss;
+                break;
             }
             }
         }
+
+        // Ball debug code.
+        // if (e.button == SDL_BUTTON_MIDDLE)
+        // {
+        //     switch (e.state)
+        //     {
+        //     case SDL_PRESSED:
+        //     {
+        //         if (debugBall == NULL)
+        //         {
+        //             Ball *b = findBalls(&balls, e.x, e.y);
+        //             if (b != NULL)
+        //                 debugBall = b;
+        //             else
+        //                 break;
+
+        //             debugBallOriginalColor = debugBall->getColor();
+        //             debugBall->setColor(tools::newColor(0, 255, 0, 255));
+        //             break;
+        //         }
+        //         else
+        //         {
+        //             debugBall->setColor(debugBallOriginalColor);
+        //             debugBall = NULL;
+        //             break;
+        //         }
+        //     }
+        //     }
+        // }
     }
 
     Ball *ballSimScene::findBalls(std::vector<Ball> *balls, float x, float y)
