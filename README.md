@@ -10,7 +10,9 @@ To use Command-Line arguments execute from the terminal.
 **Keybinds:**
 
 > Left-click - Drag ball
+
 > Middle-click - Toggle momentum loss
+
 > Right-click - Toggle gravity
 
 **Command-Line argument format:**
