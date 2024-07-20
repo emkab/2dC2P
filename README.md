@@ -10,7 +10,7 @@ Install MINGW in the MSYS2 terminal using the following command:
 
     $ pacman -S mingw-w64-ucrt-x86_64-gcc
 
-And add the UCRT bin directory to windows PATH:
+And add the UCRT bin directory to Windows PATH:
 
     "[MSYS2-Installtion-Directory]\ucrt64\bin"
 
