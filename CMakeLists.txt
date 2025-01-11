@@ -1,0 +1,80 @@
+cmake_minimum_required(VERSION 3.10)
+
+# Set project name and version
+project(MyCrossPlatformApp VERSION 1.0 LANGUAGES CXX)
+
+# Enable C++11 (or later)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Define a list of source files
+set(SOURCES
+    src/main.cpp
+    # Add other source files here
+)
+
+include_directories(include)
+
+# Find SDL2 package (you may need to adjust this based on your setup)
+find_package(SDL2 2.30.11 REQUIRED EXACT)
+
+# For SDL2 installation via pkg-config (on Linux/macOS)
+if (NOT SDL2_FOUND)
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(SDL2 REQUIRED sdl2)
+    include_directories(${SDL2_INCLUDE_DIRS})
+    link_directories(${SDL2_LIBRARY_DIRS})
+endif()
+
+# Find SDL2_image package (you may need to adjust this based on your setup)
+find_package(SDL2_image 2.8.4 REQUIRED EXACT)
+
+# For SDL2 installation via pkg-config (on Linux/macOS)
+if (NOT SDL2_FOUND)
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(SDL2_image REQUIRED sdl2)
+    include_directories(${SDL2_INCLUDE_DIRS})
+    link_directories(${SDL2_LIBRARY_DIRS})
+endif()
+
+# Find SDL2_ttf package (you may need to adjust this based on your setup)
+find_package(SDL2_ttf 2.24.0 REQUIRED EXACT)
+
+# For SDL2 installation via pkg-config (on Linux/macOS)
+if (NOT SDL2_FOUND)
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(SDL2_ttf REQUIRED sdl2)
+    include_directories(${SDL2_INCLUDE_DIRS})
+    link_directories(${SDL2_LIBRARY_DIRS})
+endif()
+
+# Add the executable
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+# Link the SDL2 libraries
+target_link_libraries(${PROJECT_NAME} SDL2::SDL2)
+
+# Additional configuration for platforms
+if(WIN32)
+    # Windows-specific settings (if needed)
+    message(STATUS "Configuring for Windows...")
+elseif(APPLE)
+    # macOS-specific settings (if needed)
+    message(STATUS "Configuring for macOS...")
+elseif(UNIX)
+    # Linux-specific settings (if needed)
+    message(STATUS "Configuring for Linux...")
+endif()
+
+# Optionally, enable debugging symbols for better debugging during development
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    message(STATUS "Debug build enabled")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+endif()
+
+# Install the binary (optional)
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+
+# Enable testing (optional)
+enable_testing()
+add_test(NAME app_test COMMAND ${PROJECT_NAME})
