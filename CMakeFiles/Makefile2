@@ -85,12 +85,12 @@ clean: CMakeFiles/MyCrossPlatformApp.dir/clean
 CMakeFiles/MyCrossPlatformApp.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/emkab/dev/2dc2p/CMakeFiles --progress-num=1,2 "Built target MyCrossPlatformApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/emkab/dev/2dc2p/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target MyCrossPlatformApp"
 .PHONY : CMakeFiles/MyCrossPlatformApp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/MyCrossPlatformApp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emkab/dev/2dc2p/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emkab/dev/2dc2p/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/MyCrossPlatformApp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emkab/dev/2dc2p/CMakeFiles 0
 .PHONY : CMakeFiles/MyCrossPlatformApp.dir/rule
@@ -102,7 +102,7 @@ MyCrossPlatformApp: CMakeFiles/MyCrossPlatformApp.dir/rule
 # codegen rule for target.
 CMakeFiles/MyCrossPlatformApp.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/emkab/dev/2dc2p/CMakeFiles --progress-num=1,2 "Finished codegen for target MyCrossPlatformApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/emkab/dev/2dc2p/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Finished codegen for target MyCrossPlatformApp"
 .PHONY : CMakeFiles/MyCrossPlatformApp.dir/codegen
 
 # clean rule for target.

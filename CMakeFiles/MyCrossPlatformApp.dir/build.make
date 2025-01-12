@@ -72,10 +72,52 @@ include CMakeFiles/MyCrossPlatformApp.dir/flags.make
 CMakeFiles/MyCrossPlatformApp.dir/codegen:
 .PHONY : CMakeFiles/MyCrossPlatformApp.dir/codegen
 
+CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.o: CMakeFiles/MyCrossPlatformApp.dir/flags.make
+CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.o: src/ball.cpp
+CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.o: CMakeFiles/MyCrossPlatformApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/emkab/dev/2dc2p/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.o -MF CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.o.d -o CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.o -c /Users/emkab/dev/2dc2p/src/ball.cpp
+
+CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/emkab/dev/2dc2p/src/ball.cpp > CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.i
+
+CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/emkab/dev/2dc2p/src/ball.cpp -o CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.s
+
+CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.o: CMakeFiles/MyCrossPlatformApp.dir/flags.make
+CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.o: src/ballSimScene.cpp
+CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.o: CMakeFiles/MyCrossPlatformApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/emkab/dev/2dc2p/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.o -MF CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.o.d -o CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.o -c /Users/emkab/dev/2dc2p/src/ballSimScene.cpp
+
+CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/emkab/dev/2dc2p/src/ballSimScene.cpp > CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.i
+
+CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/emkab/dev/2dc2p/src/ballSimScene.cpp -o CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.s
+
+CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.o: CMakeFiles/MyCrossPlatformApp.dir/flags.make
+CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.o: src/entity.cpp
+CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.o: CMakeFiles/MyCrossPlatformApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/emkab/dev/2dc2p/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.o -MF CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.o.d -o CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.o -c /Users/emkab/dev/2dc2p/src/entity.cpp
+
+CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/emkab/dev/2dc2p/src/entity.cpp > CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.i
+
+CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/emkab/dev/2dc2p/src/entity.cpp -o CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.s
+
 CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.o: CMakeFiles/MyCrossPlatformApp.dir/flags.make
 CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.o: CMakeFiles/MyCrossPlatformApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/emkab/dev/2dc2p/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/emkab/dev/2dc2p/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.o -MF CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.o.d -o CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.o -c /Users/emkab/dev/2dc2p/src/main.cpp
 
 CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.i: cmake_force
@@ -86,18 +128,74 @@ CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/emkab/dev/2dc2p/src/main.cpp -o CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.s
 
+CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.o: CMakeFiles/MyCrossPlatformApp.dir/flags.make
+CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.o: src/renderwindow.cpp
+CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.o: CMakeFiles/MyCrossPlatformApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/emkab/dev/2dc2p/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.o -MF CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.o.d -o CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.o -c /Users/emkab/dev/2dc2p/src/renderwindow.cpp
+
+CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/emkab/dev/2dc2p/src/renderwindow.cpp > CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.i
+
+CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/emkab/dev/2dc2p/src/renderwindow.cpp -o CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.s
+
+CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.o: CMakeFiles/MyCrossPlatformApp.dir/flags.make
+CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.o: src/tools.cpp
+CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.o: CMakeFiles/MyCrossPlatformApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/emkab/dev/2dc2p/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.o -MF CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.o.d -o CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.o -c /Users/emkab/dev/2dc2p/src/tools.cpp
+
+CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/emkab/dev/2dc2p/src/tools.cpp > CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.i
+
+CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/emkab/dev/2dc2p/src/tools.cpp -o CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.s
+
+CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.o: CMakeFiles/MyCrossPlatformApp.dir/flags.make
+CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.o: src/Vector.cpp
+CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.o: CMakeFiles/MyCrossPlatformApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/emkab/dev/2dc2p/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.o -MF CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.o.d -o CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.o -c /Users/emkab/dev/2dc2p/src/Vector.cpp
+
+CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/emkab/dev/2dc2p/src/Vector.cpp > CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.i
+
+CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/emkab/dev/2dc2p/src/Vector.cpp -o CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.s
+
 # Object files for target MyCrossPlatformApp
 MyCrossPlatformApp_OBJECTS = \
-"CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.o"
+"CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.o" \
+"CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.o" \
+"CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.o" \
+"CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.o" \
+"CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.o" \
+"CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.o" \
+"CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.o"
 
 # External object files for target MyCrossPlatformApp
 MyCrossPlatformApp_EXTERNAL_OBJECTS =
 
+MyCrossPlatformApp: CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.o
+MyCrossPlatformApp: CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.o
+MyCrossPlatformApp: CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.o
 MyCrossPlatformApp: CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.o
+MyCrossPlatformApp: CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.o
+MyCrossPlatformApp: CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.o
+MyCrossPlatformApp: CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.o
 MyCrossPlatformApp: CMakeFiles/MyCrossPlatformApp.dir/build.make
 MyCrossPlatformApp: /opt/homebrew/Cellar/sdl2/2.30.11/lib/libSDL2.dylib
+MyCrossPlatformApp: /opt/homebrew/Cellar/sdl2_image/2.8.4/lib/libSDL2_image.dylib
+MyCrossPlatformApp: /opt/homebrew/Cellar/sdl2_ttf/2.24.0/lib/libSDL2_ttf.dylib
 MyCrossPlatformApp: CMakeFiles/MyCrossPlatformApp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/emkab/dev/2dc2p/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable MyCrossPlatformApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/emkab/dev/2dc2p/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable MyCrossPlatformApp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MyCrossPlatformApp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -4,7 +4,7 @@
 # compile CXX with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/emkab/dev/2dc2p/include -isystem /opt/homebrew/Cellar/sdl2/2.30.11/include/SDL2
+CXX_INCLUDES = -I/Users/emkab/dev/2dc2p/include -I/opt/homebrew/Cellar/sdl2/2.30.11/include -isystem /opt/homebrew/Cellar/sdl2/2.30.11/include/SDL2 -isystem /opt/homebrew/Cellar/sdl2_image/2.8.4/include/SDL2 -isystem /opt/homebrew/Cellar/sdl2_ttf/2.24.0/include/SDL2
 
 CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
 

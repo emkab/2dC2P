@@ -31,9 +31,6 @@
 *.out
 *.app
 
-# IDE
-.vscode/
-
 # Except Dependent Libraries
 !SDL2.dll
 !SDL2_image.dll
@@ -48,4 +45,46 @@
 !libSDL2.la
 !libSDL2main.a
 !libSDL2main.la
+
+# CMake generated files
+/CMakeLists.txt.user
+/CMakeLists.txt.cache
+/CMakeLists.txt.vars
+/CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# Build output directories
+/build/
+bin/
+lib/
+out/
+
+# Dependency directories
+/deps/
+
+# IDE or editor-specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Debug and Release directories (typically created by the build system)
+Debug/
+Release/
+RelWithDebInfo/
+MinSizeRel/
+
+# Log files
+*.log
+
+# Generated files for tests or coverage
+*.gcda
+*.gcno
+*.dSYM/
+
 

@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Set project name and version
-project(MyCrossPlatformApp VERSION 1.0 LANGUAGES CXX)
+project(MyCrossPlatformApp VERSION 1.0 LANGUAGES C CXX)
+
+enable_language(C)
+enable_language(CXX)
 
 # Enable C++11 (or later)
 set(CMAKE_CXX_STANDARD 20)
@@ -9,50 +12,50 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Define a list of source files
 set(SOURCES
+    src/ball.cpp
+    src/ballSimScene.cpp
+    src/entity.cpp
     src/main.cpp
+    src/renderwindow.cpp
+    src/tools.cpp
+    src/Vector.cpp
     # Add other source files here
 )
 
 include_directories(include)
 
 # Find SDL2 package (you may need to adjust this based on your setup)
-find_package(SDL2 2.30.11 REQUIRED EXACT)
+find_package(SDL2 REQUIRED)
+find_package(SDL2_image REQUIRED)
+find_package(SDL2_ttf REQUIRED)
 
 # For SDL2 installation via pkg-config (on Linux/macOS)
 if (NOT SDL2_FOUND)
     find_package(PkgConfig REQUIRED)
     pkg_check_modules(SDL2 REQUIRED sdl2)
+endif()
     include_directories(${SDL2_INCLUDE_DIRS})
     link_directories(${SDL2_LIBRARY_DIRS})
-endif()
 
-# Find SDL2_image package (you may need to adjust this based on your setup)
-find_package(SDL2_image 2.8.4 REQUIRED EXACT)
-
-# For SDL2 installation via pkg-config (on Linux/macOS)
-if (NOT SDL2_FOUND)
+if (NOT SDL2_image_FOUND)
     find_package(PkgConfig REQUIRED)
     pkg_check_modules(SDL2_image REQUIRED sdl2)
-    include_directories(${SDL2_INCLUDE_DIRS})
-    link_directories(${SDL2_LIBRARY_DIRS})
 endif()
+    include_directories(${SDL2_image_INCLUDE_DIRS})
+    link_directories(${SDL2_image_LIBRARY_DIRS})
 
-# Find SDL2_ttf package (you may need to adjust this based on your setup)
-find_package(SDL2_ttf 2.24.0 REQUIRED EXACT)
-
-# For SDL2 installation via pkg-config (on Linux/macOS)
-if (NOT SDL2_FOUND)
+if (NOT SDL2_ttf_FOUND)
     find_package(PkgConfig REQUIRED)
     pkg_check_modules(SDL2_ttf REQUIRED sdl2)
-    include_directories(${SDL2_INCLUDE_DIRS})
-    link_directories(${SDL2_LIBRARY_DIRS})
 endif()
+    include_directories(${SDL2_ttf_INCLUDE_DIRS})
+    link_directories(${SDL2_ttf_LIBRARY_DIRS})
 
 # Add the executable
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 # Link the SDL2 libraries
-target_link_libraries(${PROJECT_NAME} SDL2::SDL2)
+target_link_libraries(${PROJECT_NAME} SDL2::SDL2 SDL2_image::SDL2_image SDL2_ttf::SDL2_ttf)
 
 # Additional configuration for platforms
 if(WIN32)

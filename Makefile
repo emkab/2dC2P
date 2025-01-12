@@ -184,6 +184,102 @@ MyCrossPlatformApp/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/build
 .PHONY : MyCrossPlatformApp/fast
 
+src/Vector.o: src/Vector.cpp.o
+.PHONY : src/Vector.o
+
+# target to build an object file
+src/Vector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.o
+.PHONY : src/Vector.cpp.o
+
+src/Vector.i: src/Vector.cpp.i
+.PHONY : src/Vector.i
+
+# target to preprocess a source file
+src/Vector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.i
+.PHONY : src/Vector.cpp.i
+
+src/Vector.s: src/Vector.cpp.s
+.PHONY : src/Vector.s
+
+# target to generate assembly for a file
+src/Vector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.s
+.PHONY : src/Vector.cpp.s
+
+src/ball.o: src/ball.cpp.o
+.PHONY : src/ball.o
+
+# target to build an object file
+src/ball.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.o
+.PHONY : src/ball.cpp.o
+
+src/ball.i: src/ball.cpp.i
+.PHONY : src/ball.i
+
+# target to preprocess a source file
+src/ball.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.i
+.PHONY : src/ball.cpp.i
+
+src/ball.s: src/ball.cpp.s
+.PHONY : src/ball.s
+
+# target to generate assembly for a file
+src/ball.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.s
+.PHONY : src/ball.cpp.s
+
+src/ballSimScene.o: src/ballSimScene.cpp.o
+.PHONY : src/ballSimScene.o
+
+# target to build an object file
+src/ballSimScene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.o
+.PHONY : src/ballSimScene.cpp.o
+
+src/ballSimScene.i: src/ballSimScene.cpp.i
+.PHONY : src/ballSimScene.i
+
+# target to preprocess a source file
+src/ballSimScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.i
+.PHONY : src/ballSimScene.cpp.i
+
+src/ballSimScene.s: src/ballSimScene.cpp.s
+.PHONY : src/ballSimScene.s
+
+# target to generate assembly for a file
+src/ballSimScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.s
+.PHONY : src/ballSimScene.cpp.s
+
+src/entity.o: src/entity.cpp.o
+.PHONY : src/entity.o
+
+# target to build an object file
+src/entity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.o
+.PHONY : src/entity.cpp.o
+
+src/entity.i: src/entity.cpp.i
+.PHONY : src/entity.i
+
+# target to preprocess a source file
+src/entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.i
+.PHONY : src/entity.cpp.i
+
+src/entity.s: src/entity.cpp.s
+.PHONY : src/entity.s
+
+# target to generate assembly for a file
+src/entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.s
+.PHONY : src/entity.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -208,6 +304,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/renderwindow.o: src/renderwindow.cpp.o
+.PHONY : src/renderwindow.o
+
+# target to build an object file
+src/renderwindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.o
+.PHONY : src/renderwindow.cpp.o
+
+src/renderwindow.i: src/renderwindow.cpp.i
+.PHONY : src/renderwindow.i
+
+# target to preprocess a source file
+src/renderwindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.i
+.PHONY : src/renderwindow.cpp.i
+
+src/renderwindow.s: src/renderwindow.cpp.s
+.PHONY : src/renderwindow.s
+
+# target to generate assembly for a file
+src/renderwindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.s
+.PHONY : src/renderwindow.cpp.s
+
+src/tools.o: src/tools.cpp.o
+.PHONY : src/tools.o
+
+# target to build an object file
+src/tools.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.o
+.PHONY : src/tools.cpp.o
+
+src/tools.i: src/tools.cpp.i
+.PHONY : src/tools.i
+
+# target to preprocess a source file
+src/tools.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.i
+.PHONY : src/tools.cpp.i
+
+src/tools.s: src/tools.cpp.s
+.PHONY : src/tools.s
+
+# target to generate assembly for a file
+src/tools.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.s
+.PHONY : src/tools.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,9 +366,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... MyCrossPlatformApp"
+	@echo "... src/Vector.o"
+	@echo "... src/Vector.i"
+	@echo "... src/Vector.s"
+	@echo "... src/ball.o"
+	@echo "... src/ball.i"
+	@echo "... src/ball.s"
+	@echo "... src/ballSimScene.o"
+	@echo "... src/ballSimScene.i"
+	@echo "... src/ballSimScene.s"
+	@echo "... src/entity.o"
+	@echo "... src/entity.i"
+	@echo "... src/entity.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/renderwindow.o"
+	@echo "... src/renderwindow.i"
+	@echo "... src/renderwindow.s"
+	@echo "... src/tools.o"
+	@echo "... src/tools.i"
+	@echo "... src/tools.s"
 .PHONY : help
 
 
