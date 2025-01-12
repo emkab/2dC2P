@@ -1,13 +1,13 @@
 #pragma once
 #include <SDL.h>
 #include <SDL_image.h>
-#include "Entity.hpp"
-#include "Ball.hpp"
+#include "entity.hpp"
+#include "ball.hpp"
 
-class RenderWindow
+class Render_Window
 {
 public:
-    RenderWindow(const char *p_title, int p_w, int p_h, float scale, SDL_Color p_bg);
+    Render_Window(const char *p_title, int p_w, int p_h, float scale, SDL_Color p_bg);
     SDL_Texture *loadTexture(const char *p_filePath);
     void cleanUp();
     void clear();

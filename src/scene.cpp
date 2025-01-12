@@ -1,14 +1,14 @@
 #include "scene.hpp"
-#include "RenderWindow.hpp"
+#include "render_window.hpp"
 
-Scene::Scene(RenderWindow window)
+Scene::Scene(Render_Window window)
 {
     SDL_Rect windowSize = window.getWindowSize();
 
     srand((unsigned)time(NULL));
 }
 
-void Scene::tick(RenderWindow window, float delta_Time_In)
+void Scene::tick(Render_Window window, float delta_Time_In)
 {
     delta_Time = delta_Time_In;
     for (Entity &entity : entities)

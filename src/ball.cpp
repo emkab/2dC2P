@@ -4,7 +4,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
-#include <Ball.hpp>
+#include <ball.hpp>
 #include <tools.hpp>
 
 Ball::Ball(int p_x, int p_y, int p_radius, float p_mass, SDL_Color p_color) : x(p_x), y(p_y), radius(p_radius), mass(p_mass), color(p_color)

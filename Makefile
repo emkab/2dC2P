@@ -184,6 +184,30 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/build
 .PHONY : 2dc2p/fast
 
+src/Render_Window.o: src/Render_Window.cpp.o
+.PHONY : src/Render_Window.o
+
+# target to build an object file
+src/Render_Window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/Render_Window.cpp.o
+.PHONY : src/Render_Window.cpp.o
+
+src/Render_Window.i: src/Render_Window.cpp.i
+.PHONY : src/Render_Window.i
+
+# target to preprocess a source file
+src/Render_Window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/Render_Window.cpp.i
+.PHONY : src/Render_Window.cpp.i
+
+src/Render_Window.s: src/Render_Window.cpp.s
+.PHONY : src/Render_Window.s
+
+# target to generate assembly for a file
+src/Render_Window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/Render_Window.cpp.s
+.PHONY : src/Render_Window.cpp.s
+
 src/Vector.o: src/Vector.cpp.o
 .PHONY : src/Vector.o
 
@@ -280,30 +304,6 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/renderwindow.o: src/renderwindow.cpp.o
-.PHONY : src/renderwindow.o
-
-# target to build an object file
-src/renderwindow.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/renderwindow.cpp.o
-.PHONY : src/renderwindow.cpp.o
-
-src/renderwindow.i: src/renderwindow.cpp.i
-.PHONY : src/renderwindow.i
-
-# target to preprocess a source file
-src/renderwindow.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/renderwindow.cpp.i
-.PHONY : src/renderwindow.cpp.i
-
-src/renderwindow.s: src/renderwindow.cpp.s
-.PHONY : src/renderwindow.s
-
-# target to generate assembly for a file
-src/renderwindow.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/renderwindow.cpp.s
-.PHONY : src/renderwindow.cpp.s
-
 src/scene.o: src/scene.cpp.o
 .PHONY : src/scene.o
 
@@ -366,6 +366,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... 2dc2p"
+	@echo "... src/Render_Window.o"
+	@echo "... src/Render_Window.i"
+	@echo "... src/Render_Window.s"
 	@echo "... src/Vector.o"
 	@echo "... src/Vector.i"
 	@echo "... src/Vector.s"
@@ -378,9 +381,6 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/renderwindow.o"
-	@echo "... src/renderwindow.i"
-	@echo "... src/renderwindow.s"
 	@echo "... src/scene.o"
 	@echo "... src/scene.i"
 	@echo "... src/scene.s"

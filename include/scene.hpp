@@ -6,15 +6,15 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 
-#include "RenderWindow.hpp"
-#include "Entity.hpp"
-#include "Ball.hpp"
+#include "render_window.hpp"
+#include "entity.hpp"
+#include "ball.hpp"
 
     class Scene
     {
     public:
-        Scene(RenderWindow window);
-        void tick(RenderWindow window, float delta_Time);
+        Scene(Render_Window window);
+        void tick(Render_Window window, float delta_Time);
         void addBall(float x, float y, int radius, float mass, SDL_Color color);
         void mouseEvent(SDL_MouseButtonEvent &e);
         void help();

@@ -1,12 +1,12 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <iostream>
-#include "RenderWindow.hpp"
-#include "Entity.hpp"
-#include "Ball.hpp"
+#include "render_window.hpp"
+#include "entity.hpp"
+#include "ball.hpp"
 #include "tools.hpp"
 
-RenderWindow::RenderWindow(const char *p_title, int p_w, int p_h, float p_scale, SDL_Color p_bg) : window(nullptr), renderer(nullptr), scale(p_scale)
+Render_Window::Render_Window(const char *p_title, int p_w, int p_h, float p_scale, SDL_Color p_bg) : window(nullptr), renderer(nullptr), scale(p_scale)
 {
     bg = p_bg;
     window = SDL_CreateWindow(p_title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, p_w, p_h, SDL_WINDOW_SHOWN);
@@ -16,7 +16,7 @@ RenderWindow::RenderWindow(const char *p_title, int p_w, int p_h, float p_scale,
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 }
 
-SDL_Texture *RenderWindow::loadTexture(const char *p_filePath)
+SDL_Texture *Render_Window::loadTexture(const char *p_filePath)
 {
     SDL_Texture *texture = nullptr;
     texture = IMG_LoadTexture(renderer, p_filePath);
@@ -27,32 +27,32 @@ SDL_Texture *RenderWindow::loadTexture(const char *p_filePath)
     return texture;
 }
 
-void RenderWindow::cleanUp()
+void Render_Window::cleanUp()
 {
     SDL_DestroyWindow(window);
 }
 
-void RenderWindow::clear()
+void Render_Window::clear()
 {
     SDL_SetRenderDrawColor(renderer, bg.r, bg.g, bg.b, bg.a);
     SDL_RenderClear(renderer);
 }
 
-SDL_Rect RenderWindow::getWindowSize()
+SDL_Rect Render_Window::getWindowSize()
 {
     SDL_Rect size = SDL_Rect{.x = 0, .y = 0};
     SDL_GetWindowSize(window, &size.w, &size.h);
     return size;
 }
 
-float RenderWindow::getScale() { return scale; }
-float RenderWindow::setScale(float p_scale)
+float Render_Window::getScale() { return scale; }
+float Render_Window::setScale(float p_scale)
 {
     scale = p_scale;
     return scale;
 }
 
-void RenderWindow::render(Entity &p_entity)
+void Render_Window::render(Entity &p_entity)
 {
     SDL_Rect src;
     src.x = p_entity.getCurrentFrame().x;
@@ -69,7 +69,7 @@ void RenderWindow::render(Entity &p_entity)
     SDL_RenderCopy(renderer, p_entity.getTex(), &src, &dst);
 }
 
-void RenderWindow::render(Ball &p_ball, int type)
+void Render_Window::render(Ball &p_ball, int type)
 {
     if (type == 0)
         tools::DrawCircle(renderer, Vector(p_ball.x * (int)scale, p_ball.y * (int)scale).toPoint(), p_ball.getRadius() * scale, p_ball.getColor());
@@ -77,7 +77,7 @@ void RenderWindow::render(Ball &p_ball, int type)
         tools::DrawFullCircle(renderer, Vector(p_ball.x * (int)scale, p_ball.y * (int)scale).toPoint(), p_ball.getRadius() * scale, p_ball.getColor());
 }
 
-void RenderWindow::display()
+void Render_Window::display()
 {
     SDL_RenderPresent(renderer);
 }

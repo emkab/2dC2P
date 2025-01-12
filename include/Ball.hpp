@@ -2,7 +2,7 @@
 #include <iostream>
 #include <SDL.h>
 #include <SDL_image.h>
-#include <Vector.hpp>
+#include <vector.hpp>
 
 class Ball
 {

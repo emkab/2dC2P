@@ -4,7 +4,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
-#include <Vector.hpp>
+#include <vector.hpp>
 
 Vector::Vector() : x(0), y(0)
 {

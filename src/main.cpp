@@ -6,9 +6,9 @@
 #include <SDL_image.h>
 #include <vector>
 
-#include "RenderWindow.hpp"
+#include "render_window.hpp"
 #include "scene.hpp"
-#include "Entity.hpp"
+#include "entity.hpp"
 #include "tools.hpp"
 #include <unistd.h>
 
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     if (!(IMG_Init(IMG_INIT_PNG)))
         std::cout << "IMG initialization failed: " << SDL_GetError() << std::endl;
 
-    RenderWindow window("2dC2P v1.0", 1280, 720, 1, tools::newColor(0, 0, 0, 255));
+    Render_Window window("2dC2P v1.0", 1280, 720, 1, tools::newColor(0, 0, 0, 255));
     SDL_Rect windowSize = window.getWindowSize();
 
     bool running = true;

@@ -4,7 +4,7 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 
-#include <Vector.hpp>
+#include <vector.hpp>
 
 namespace tools
 {
