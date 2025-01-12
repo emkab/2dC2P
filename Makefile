@@ -172,24 +172,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MyCrossPlatformApp
+# Target rules for targets named 2dc2p
 
 # Build rule for target.
-MyCrossPlatformApp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MyCrossPlatformApp
-.PHONY : MyCrossPlatformApp
+2dc2p: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 2dc2p
+.PHONY : 2dc2p
 
 # fast build rule for target.
-MyCrossPlatformApp/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/build
-.PHONY : MyCrossPlatformApp/fast
+2dc2p/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/build
+.PHONY : 2dc2p/fast
 
 src/Vector.o: src/Vector.cpp.o
 .PHONY : src/Vector.o
 
 # target to build an object file
 src/Vector.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/Vector.cpp.o
 .PHONY : src/Vector.cpp.o
 
 src/Vector.i: src/Vector.cpp.i
@@ -197,7 +197,7 @@ src/Vector.i: src/Vector.cpp.i
 
 # target to preprocess a source file
 src/Vector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/Vector.cpp.i
 .PHONY : src/Vector.cpp.i
 
 src/Vector.s: src/Vector.cpp.s
@@ -205,7 +205,7 @@ src/Vector.s: src/Vector.cpp.s
 
 # target to generate assembly for a file
 src/Vector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/Vector.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/Vector.cpp.s
 .PHONY : src/Vector.cpp.s
 
 src/ball.o: src/ball.cpp.o
@@ -213,7 +213,7 @@ src/ball.o: src/ball.cpp.o
 
 # target to build an object file
 src/ball.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/ball.cpp.o
 .PHONY : src/ball.cpp.o
 
 src/ball.i: src/ball.cpp.i
@@ -221,7 +221,7 @@ src/ball.i: src/ball.cpp.i
 
 # target to preprocess a source file
 src/ball.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/ball.cpp.i
 .PHONY : src/ball.cpp.i
 
 src/ball.s: src/ball.cpp.s
@@ -229,7 +229,7 @@ src/ball.s: src/ball.cpp.s
 
 # target to generate assembly for a file
 src/ball.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/ball.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/ball.cpp.s
 .PHONY : src/ball.cpp.s
 
 src/ballSimScene.o: src/ballSimScene.cpp.o
@@ -237,7 +237,7 @@ src/ballSimScene.o: src/ballSimScene.cpp.o
 
 # target to build an object file
 src/ballSimScene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/ballSimScene.cpp.o
 .PHONY : src/ballSimScene.cpp.o
 
 src/ballSimScene.i: src/ballSimScene.cpp.i
@@ -245,7 +245,7 @@ src/ballSimScene.i: src/ballSimScene.cpp.i
 
 # target to preprocess a source file
 src/ballSimScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/ballSimScene.cpp.i
 .PHONY : src/ballSimScene.cpp.i
 
 src/ballSimScene.s: src/ballSimScene.cpp.s
@@ -253,7 +253,7 @@ src/ballSimScene.s: src/ballSimScene.cpp.s
 
 # target to generate assembly for a file
 src/ballSimScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/ballSimScene.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/ballSimScene.cpp.s
 .PHONY : src/ballSimScene.cpp.s
 
 src/entity.o: src/entity.cpp.o
@@ -261,7 +261,7 @@ src/entity.o: src/entity.cpp.o
 
 # target to build an object file
 src/entity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/entity.cpp.o
 .PHONY : src/entity.cpp.o
 
 src/entity.i: src/entity.cpp.i
@@ -269,7 +269,7 @@ src/entity.i: src/entity.cpp.i
 
 # target to preprocess a source file
 src/entity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/entity.cpp.i
 .PHONY : src/entity.cpp.i
 
 src/entity.s: src/entity.cpp.s
@@ -277,7 +277,7 @@ src/entity.s: src/entity.cpp.s
 
 # target to generate assembly for a file
 src/entity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/entity.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/entity.cpp.s
 .PHONY : src/entity.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -285,7 +285,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -293,7 +293,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -301,7 +301,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/renderwindow.o: src/renderwindow.cpp.o
@@ -309,7 +309,7 @@ src/renderwindow.o: src/renderwindow.cpp.o
 
 # target to build an object file
 src/renderwindow.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/renderwindow.cpp.o
 .PHONY : src/renderwindow.cpp.o
 
 src/renderwindow.i: src/renderwindow.cpp.i
@@ -317,7 +317,7 @@ src/renderwindow.i: src/renderwindow.cpp.i
 
 # target to preprocess a source file
 src/renderwindow.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/renderwindow.cpp.i
 .PHONY : src/renderwindow.cpp.i
 
 src/renderwindow.s: src/renderwindow.cpp.s
@@ -325,7 +325,7 @@ src/renderwindow.s: src/renderwindow.cpp.s
 
 # target to generate assembly for a file
 src/renderwindow.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/renderwindow.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/renderwindow.cpp.s
 .PHONY : src/renderwindow.cpp.s
 
 src/tools.o: src/tools.cpp.o
@@ -333,7 +333,7 @@ src/tools.o: src/tools.cpp.o
 
 # target to build an object file
 src/tools.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/tools.cpp.o
 .PHONY : src/tools.cpp.o
 
 src/tools.i: src/tools.cpp.i
@@ -341,7 +341,7 @@ src/tools.i: src/tools.cpp.i
 
 # target to preprocess a source file
 src/tools.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/tools.cpp.i
 .PHONY : src/tools.cpp.i
 
 src/tools.s: src/tools.cpp.s
@@ -349,7 +349,7 @@ src/tools.s: src/tools.cpp.s
 
 # target to generate assembly for a file
 src/tools.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyCrossPlatformApp.dir/build.make CMakeFiles/MyCrossPlatformApp.dir/src/tools.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/tools.cpp.s
 .PHONY : src/tools.cpp.s
 
 # Help Target
@@ -365,7 +365,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... MyCrossPlatformApp"
+	@echo "... 2dc2p"
 	@echo "... src/Vector.o"
 	@echo "... src/Vector.i"
 	@echo "... src/Vector.s"

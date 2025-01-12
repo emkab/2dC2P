@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Set project name and version
-project(MyCrossPlatformApp VERSION 1.0 LANGUAGES C CXX)
+project(2dc2p VERSION 1.0.1 LANGUAGES C CXX)
 
 enable_language(C)
 enable_language(CXX)
