@@ -14,23 +14,6 @@
 
 int main(int argc, char *argv[])
 {
-    int ballCount = 3;
-    if (argc > 1)
-    {
-        if (std::string(argv[1]) == "-h" | std::string(argv[1]) == "-help" | std::string(argv[1]) == "h" | std::string(argv[1]) == "help")
-        {
-            std::cout << "Argument format:" << std::endl;
-            std::cout << "--  ./main.exe ballCount[int] gravity[bool] randDensity[bool] randSpeed[int] momentumLoss[bool]" << std::endl;
-            std::cout << "In-game keybinds:" << std::endl;
-            std::cout << "--  Left-Click: Grab ball" << std::endl;
-            std::cout << "--  Middle-Click: Toggle momentum loss" << std::endl;
-            std::cout << "--  Right-Click: Toggle gravity" << std::endl;
-            return 0;
-        }
-        else
-            ballCount = *argv[1] - '0';
-    }
-
     using namespace std::chrono;
     if (SDL_Init(SDL_INIT_VIDEO) > 0)
         std::cout << "SDL initialization error: " << SDL_GetError() << std::endl;
@@ -51,6 +34,14 @@ int main(int argc, char *argv[])
 
 
     Scene scene(window);
+
+        if (argc > 1)
+    {
+        if (std::string(argv[1]) == "-h" | std::string(argv[1]) == "-help" | std::string(argv[1]) == "h" | std::string(argv[1]) == "help")
+        {
+            scene.help();
+        }
+    }
 
     while (running == true)
     {
