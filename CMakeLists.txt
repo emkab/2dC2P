@@ -13,12 +13,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Define a list of source files
 set(SOURCES
     src/ball.cpp
-    src/ballSimScene.cpp
     src/entity.cpp
     src/main.cpp
     src/renderwindow.cpp
     src/tools.cpp
     src/Vector.cpp
+    src/scene.cpp
     # Add other source files here
 )
 

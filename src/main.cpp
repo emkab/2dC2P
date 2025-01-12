@@ -7,9 +7,9 @@
 #include <vector>
 
 #include "RenderWindow.hpp"
+#include "scene.hpp"
 #include "Entity.hpp"
 #include "tools.hpp"
-#include "scenes.hpp"
 #include <unistd.h>
 
 int main(int argc, char *argv[])
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
             std::cout << "--  ./main.exe ballCount[int] gravity[bool] randDensity[bool] randSpeed[int] momentumLoss[bool]" << std::endl;
             std::cout << "In-game keybinds:" << std::endl;
             std::cout << "--  Left-Click: Grab ball" << std::endl;
-            std::cout << "--  Middle-Click: Select debug ball (Only marks ball as green and slows performence.)" << std::endl;
+            std::cout << "--  Middle-Click: Toggle momentum loss" << std::endl;
             std::cout << "--  Right-Click: Toggle gravity" << std::endl;
             return 0;
         }
@@ -49,49 +49,8 @@ int main(int argc, char *argv[])
     float delta_Time = 0.0;
     int fps = 60;
 
-    bool gravity = true;
-    bool randDensity = true;
-    int randSpeed = 0;
-    bool momentumLoss = true;
 
-    if (argc > 2)
-    {
-        std::string gravity_p(argv[2]);
-        if (gravity_p == "true")
-            gravity = true;
-        else if (gravity_p == "false")
-            gravity = false;
-        else
-            gravity = true;
-
-        if (argc > 3)
-        {
-            std::string randDensity_p(argv[3]);
-            if (randDensity_p == "true")
-                randDensity = true;
-            else if (randDensity_p == "false")
-                randDensity = false;
-            else
-                randDensity = true;
-
-            if (argc > 4)
-            {
-                randSpeed = *argv[4] - '0';
-
-                if (argc > 5)
-                {
-                    std::string momentumLoss_p(argv[5]);
-                    if (momentumLoss_p == "true")
-                        momentumLoss = true;
-                    else if (momentumLoss_p == "false")
-                        momentumLoss = false;
-                    else
-                        momentumLoss = true;
-                }
-            }
-        }
-    }
-    scenes::ballSimScene scene(window, ballCount, gravity, randDensity, randSpeed, momentumLoss);
+    Scene scene(window);
 
     while (running == true)
     {

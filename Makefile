@@ -232,30 +232,6 @@ src/ball.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/ball.cpp.s
 .PHONY : src/ball.cpp.s
 
-src/ballSimScene.o: src/ballSimScene.cpp.o
-.PHONY : src/ballSimScene.o
-
-# target to build an object file
-src/ballSimScene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/ballSimScene.cpp.o
-.PHONY : src/ballSimScene.cpp.o
-
-src/ballSimScene.i: src/ballSimScene.cpp.i
-.PHONY : src/ballSimScene.i
-
-# target to preprocess a source file
-src/ballSimScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/ballSimScene.cpp.i
-.PHONY : src/ballSimScene.cpp.i
-
-src/ballSimScene.s: src/ballSimScene.cpp.s
-.PHONY : src/ballSimScene.s
-
-# target to generate assembly for a file
-src/ballSimScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/ballSimScene.cpp.s
-.PHONY : src/ballSimScene.cpp.s
-
 src/entity.o: src/entity.cpp.o
 .PHONY : src/entity.o
 
@@ -328,6 +304,30 @@ src/renderwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/renderwindow.cpp.s
 .PHONY : src/renderwindow.cpp.s
 
+src/scene.o: src/scene.cpp.o
+.PHONY : src/scene.o
+
+# target to build an object file
+src/scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/scene.cpp.o
+.PHONY : src/scene.cpp.o
+
+src/scene.i: src/scene.cpp.i
+.PHONY : src/scene.i
+
+# target to preprocess a source file
+src/scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/scene.cpp.i
+.PHONY : src/scene.cpp.i
+
+src/scene.s: src/scene.cpp.s
+.PHONY : src/scene.s
+
+# target to generate assembly for a file
+src/scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/scene.cpp.s
+.PHONY : src/scene.cpp.s
+
 src/tools.o: src/tools.cpp.o
 .PHONY : src/tools.o
 
@@ -372,9 +372,6 @@ help:
 	@echo "... src/ball.o"
 	@echo "... src/ball.i"
 	@echo "... src/ball.s"
-	@echo "... src/ballSimScene.o"
-	@echo "... src/ballSimScene.i"
-	@echo "... src/ballSimScene.s"
 	@echo "... src/entity.o"
 	@echo "... src/entity.i"
 	@echo "... src/entity.s"
@@ -384,6 +381,9 @@ help:
 	@echo "... src/renderwindow.o"
 	@echo "... src/renderwindow.i"
 	@echo "... src/renderwindow.s"
+	@echo "... src/scene.o"
+	@echo "... src/scene.i"
+	@echo "... src/scene.s"
 	@echo "... src/tools.o"
 	@echo "... src/tools.i"
 	@echo "... src/tools.s"
