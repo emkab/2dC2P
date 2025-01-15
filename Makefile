@@ -184,54 +184,6 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/build
 .PHONY : 2dc2p/fast
 
-src/Render_Window.o: src/Render_Window.cpp.o
-.PHONY : src/Render_Window.o
-
-# target to build an object file
-src/Render_Window.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/Render_Window.cpp.o
-.PHONY : src/Render_Window.cpp.o
-
-src/Render_Window.i: src/Render_Window.cpp.i
-.PHONY : src/Render_Window.i
-
-# target to preprocess a source file
-src/Render_Window.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/Render_Window.cpp.i
-.PHONY : src/Render_Window.cpp.i
-
-src/Render_Window.s: src/Render_Window.cpp.s
-.PHONY : src/Render_Window.s
-
-# target to generate assembly for a file
-src/Render_Window.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/Render_Window.cpp.s
-.PHONY : src/Render_Window.cpp.s
-
-src/Vector.o: src/Vector.cpp.o
-.PHONY : src/Vector.o
-
-# target to build an object file
-src/Vector.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/Vector.cpp.o
-.PHONY : src/Vector.cpp.o
-
-src/Vector.i: src/Vector.cpp.i
-.PHONY : src/Vector.i
-
-# target to preprocess a source file
-src/Vector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/Vector.cpp.i
-.PHONY : src/Vector.cpp.i
-
-src/Vector.s: src/Vector.cpp.s
-.PHONY : src/Vector.s
-
-# target to generate assembly for a file
-src/Vector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/Vector.cpp.s
-.PHONY : src/Vector.cpp.s
-
 src/ball.o: src/ball.cpp.o
 .PHONY : src/ball.o
 
@@ -304,29 +256,29 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/scene.o: src/scene.cpp.o
-.PHONY : src/scene.o
+src/renderWindow.o: src/renderWindow.cpp.o
+.PHONY : src/renderWindow.o
 
 # target to build an object file
-src/scene.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/scene.cpp.o
-.PHONY : src/scene.cpp.o
+src/renderWindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/renderWindow.cpp.o
+.PHONY : src/renderWindow.cpp.o
 
-src/scene.i: src/scene.cpp.i
-.PHONY : src/scene.i
+src/renderWindow.i: src/renderWindow.cpp.i
+.PHONY : src/renderWindow.i
 
 # target to preprocess a source file
-src/scene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/scene.cpp.i
-.PHONY : src/scene.cpp.i
+src/renderWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/renderWindow.cpp.i
+.PHONY : src/renderWindow.cpp.i
 
-src/scene.s: src/scene.cpp.s
-.PHONY : src/scene.s
+src/renderWindow.s: src/renderWindow.cpp.s
+.PHONY : src/renderWindow.s
 
 # target to generate assembly for a file
-src/scene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/scene.cpp.s
-.PHONY : src/scene.cpp.s
+src/renderWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/renderWindow.cpp.s
+.PHONY : src/renderWindow.cpp.s
 
 src/tools.o: src/tools.cpp.o
 .PHONY : src/tools.o
@@ -352,6 +304,30 @@ src/tools.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/tools.cpp.s
 .PHONY : src/tools.cpp.s
 
+src/vector.o: src/vector.cpp.o
+.PHONY : src/vector.o
+
+# target to build an object file
+src/vector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/vector.cpp.o
+.PHONY : src/vector.cpp.o
+
+src/vector.i: src/vector.cpp.i
+.PHONY : src/vector.i
+
+# target to preprocess a source file
+src/vector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/vector.cpp.i
+.PHONY : src/vector.cpp.i
+
+src/vector.s: src/vector.cpp.s
+.PHONY : src/vector.s
+
+# target to generate assembly for a file
+src/vector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/vector.cpp.s
+.PHONY : src/vector.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -366,12 +342,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... 2dc2p"
-	@echo "... src/Render_Window.o"
-	@echo "... src/Render_Window.i"
-	@echo "... src/Render_Window.s"
-	@echo "... src/Vector.o"
-	@echo "... src/Vector.i"
-	@echo "... src/Vector.s"
 	@echo "... src/ball.o"
 	@echo "... src/ball.i"
 	@echo "... src/ball.s"
@@ -381,12 +351,15 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/scene.o"
-	@echo "... src/scene.i"
-	@echo "... src/scene.s"
+	@echo "... src/renderWindow.o"
+	@echo "... src/renderWindow.i"
+	@echo "... src/renderWindow.s"
 	@echo "... src/tools.o"
 	@echo "... src/tools.i"
 	@echo "... src/tools.s"
+	@echo "... src/vector.o"
+	@echo "... src/vector.i"
+	@echo "... src/vector.s"
 .PHONY : help
 
 

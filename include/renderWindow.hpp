@@ -4,10 +4,10 @@
 #include "entity.hpp"
 #include "ball.hpp"
 
-class Render_Window
+class RenderWindow
 {
 public:
-    Render_Window(const char *p_title, int p_w, int p_h, float scale, SDL_Color p_bg);
+    RenderWindow(const char *p_title, int p_w, int p_h, float scale, SDL_Color p_bg);
     SDL_Texture *loadTexture(const char *p_filePath);
     void cleanUp();
     void clear();

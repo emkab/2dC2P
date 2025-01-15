@@ -15,10 +15,9 @@ set(SOURCES
     src/ball.cpp
     src/entity.cpp
     src/main.cpp
-    src/render_window.cpp
+    src/renderWindow.cpp
     src/tools.cpp
-    src/Vector.cpp
-    src/scene.cpp
+    src/vector.cpp
     # Add other source files here
 )
 
