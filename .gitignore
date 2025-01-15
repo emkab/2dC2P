@@ -64,7 +64,6 @@ out/
 /deps/
 
 glad/CMakeFiles
-glad/CMakeFiles
 
 # IDE or editor-specific files
 .vscode/
