@@ -4,7 +4,7 @@
 # compile C with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/emkab/dev/2dc2p/include -I/opt/homebrew/Cellar/sdl2/2.30.11/include -I/opt/homebrew/Cellar/sdl2/2.30.11/include/SDL2 -I/Users/emkab/dev/2dc2p/glad/include
+C_INCLUDES = -I/Users/emkab/dev/2dc2p/include -I/opt/homebrew/Cellar/sdl2/2.30.11/include -I/opt/homebrew/Cellar/sdl2/2.30.11/include/SDL2 -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/System/Library/Frameworks -I/opt/homebrew/Cellar/glfw/3.4/include -I/Users/emkab/dev/2dc2p/glad/include
 
 C_FLAGSarm64 =  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk
 

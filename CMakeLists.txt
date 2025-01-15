@@ -50,12 +50,24 @@ endif()
     include_directories(${SDL2_ttf_INCLUDE_DIRS})
     link_directories(${SDL2_ttf_LIBRARY_DIRS})
 
+
+find_package(glfw3 REQUIRED)
+find_package(OpenGL REQUIRED)
+
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(GLFW REQUIRED glfw3)
     
-    # Add the executable
+include_directories(
+        ${OPENGL_INCLUDE_DIR}
+        ${GLFW_INCLUDE_DIRS}
+)
+
+    
+# Add the executable
 add_executable(${PROJECT_NAME} ${SOURCES})
     
 add_subdirectory(glad/)
-target_link_libraries(${PROJECT_NAME} PRIVATE glad SDL2::SDL2 SDL2_image::SDL2_image SDL2_ttf::SDL2_ttf)
+target_link_libraries(${PROJECT_NAME} PRIVATE glad SDL2::SDL2 SDL2_image::SDL2_image SDL2_ttf::SDL2_ttf ${OPENGL_gl_LIBRARY} ${GLFW_LIBRARIES})
 
 # Additional configuration for platforms
 if(WIN32)
