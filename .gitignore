@@ -63,6 +63,8 @@ out/
 # Dependency directories
 /deps/
 
+glad/CMakeFiles/
+
 # IDE or editor-specific files
 .vscode/
 .idea/
