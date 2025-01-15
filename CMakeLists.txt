@@ -50,11 +50,12 @@ endif()
     include_directories(${SDL2_ttf_INCLUDE_DIRS})
     link_directories(${SDL2_ttf_LIBRARY_DIRS})
 
-# Add the executable
+    
+    # Add the executable
 add_executable(${PROJECT_NAME} ${SOURCES})
-
-# Link the SDL2 libraries
-target_link_libraries(${PROJECT_NAME} SDL2::SDL2 SDL2_image::SDL2_image SDL2_ttf::SDL2_ttf)
+    
+add_subdirectory(glad/)
+target_link_libraries(${PROJECT_NAME} PRIVATE glad SDL2::SDL2 SDL2_image::SDL2_image SDL2_ttf::SDL2_ttf)
 
 # Additional configuration for platforms
 if(WIN32)

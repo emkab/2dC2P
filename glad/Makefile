@@ -142,14 +142,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emkab/dev/2dc2p/CMakeFiles /Users/emkab/dev/2dc2p//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /Users/emkab/dev/2dc2p && $(CMAKE_COMMAND) -E cmake_progress_start /Users/emkab/dev/2dc2p/CMakeFiles /Users/emkab/dev/2dc2p/glad//CMakeFiles/progress.marks
+	cd /Users/emkab/dev/2dc2p && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glad/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/emkab/dev/2dc2p/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /Users/emkab/dev/2dc2p && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glad/clean
 .PHONY : clean
 
 # The main clean target
@@ -158,188 +158,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/emkab/dev/2dc2p && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glad/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/emkab/dev/2dc2p && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glad/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/emkab/dev/2dc2p && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named 2dc2p
+# Convenience name for target.
+glad/CMakeFiles/glad.dir/rule:
+	cd /Users/emkab/dev/2dc2p && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glad/CMakeFiles/glad.dir/rule
+.PHONY : glad/CMakeFiles/glad.dir/rule
 
-# Build rule for target.
-2dc2p: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 2dc2p
-.PHONY : 2dc2p
-
-# fast build rule for target.
-2dc2p/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/build
-.PHONY : 2dc2p/fast
-
-#=============================================================================
-# Target rules for targets named glad
-
-# Build rule for target.
-glad: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 glad
+# Convenience name for target.
+glad: glad/CMakeFiles/glad.dir/rule
 .PHONY : glad
 
 # fast build rule for target.
 glad/fast:
-	$(MAKE) $(MAKESILENT) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/build
+	cd /Users/emkab/dev/2dc2p && $(MAKE) $(MAKESILENT) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/build
 .PHONY : glad/fast
 
-src/ball.o: src/ball.cpp.o
-.PHONY : src/ball.o
+src/glad.o: src/glad.c.o
+.PHONY : src/glad.o
 
 # target to build an object file
-src/ball.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/ball.cpp.o
-.PHONY : src/ball.cpp.o
+src/glad.c.o:
+	cd /Users/emkab/dev/2dc2p && $(MAKE) $(MAKESILENT) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/src/glad.c.o
+.PHONY : src/glad.c.o
 
-src/ball.i: src/ball.cpp.i
-.PHONY : src/ball.i
-
-# target to preprocess a source file
-src/ball.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/ball.cpp.i
-.PHONY : src/ball.cpp.i
-
-src/ball.s: src/ball.cpp.s
-.PHONY : src/ball.s
-
-# target to generate assembly for a file
-src/ball.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/ball.cpp.s
-.PHONY : src/ball.cpp.s
-
-src/entity.o: src/entity.cpp.o
-.PHONY : src/entity.o
-
-# target to build an object file
-src/entity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/entity.cpp.o
-.PHONY : src/entity.cpp.o
-
-src/entity.i: src/entity.cpp.i
-.PHONY : src/entity.i
+src/glad.i: src/glad.c.i
+.PHONY : src/glad.i
 
 # target to preprocess a source file
-src/entity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/entity.cpp.i
-.PHONY : src/entity.cpp.i
+src/glad.c.i:
+	cd /Users/emkab/dev/2dc2p && $(MAKE) $(MAKESILENT) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/src/glad.c.i
+.PHONY : src/glad.c.i
 
-src/entity.s: src/entity.cpp.s
-.PHONY : src/entity.s
-
-# target to generate assembly for a file
-src/entity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/entity.cpp.s
-.PHONY : src/entity.cpp.s
-
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
-
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
-
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+src/glad.s: src/glad.c.s
+.PHONY : src/glad.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
-
-src/renderWindow.o: src/renderWindow.cpp.o
-.PHONY : src/renderWindow.o
-
-# target to build an object file
-src/renderWindow.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/renderWindow.cpp.o
-.PHONY : src/renderWindow.cpp.o
-
-src/renderWindow.i: src/renderWindow.cpp.i
-.PHONY : src/renderWindow.i
-
-# target to preprocess a source file
-src/renderWindow.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/renderWindow.cpp.i
-.PHONY : src/renderWindow.cpp.i
-
-src/renderWindow.s: src/renderWindow.cpp.s
-.PHONY : src/renderWindow.s
-
-# target to generate assembly for a file
-src/renderWindow.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/renderWindow.cpp.s
-.PHONY : src/renderWindow.cpp.s
-
-src/tools.o: src/tools.cpp.o
-.PHONY : src/tools.o
-
-# target to build an object file
-src/tools.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/tools.cpp.o
-.PHONY : src/tools.cpp.o
-
-src/tools.i: src/tools.cpp.i
-.PHONY : src/tools.i
-
-# target to preprocess a source file
-src/tools.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/tools.cpp.i
-.PHONY : src/tools.cpp.i
-
-src/tools.s: src/tools.cpp.s
-.PHONY : src/tools.s
-
-# target to generate assembly for a file
-src/tools.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/tools.cpp.s
-.PHONY : src/tools.cpp.s
-
-src/vector.o: src/vector.cpp.o
-.PHONY : src/vector.o
-
-# target to build an object file
-src/vector.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/vector.cpp.o
-.PHONY : src/vector.cpp.o
-
-src/vector.i: src/vector.cpp.i
-.PHONY : src/vector.i
-
-# target to preprocess a source file
-src/vector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/vector.cpp.i
-.PHONY : src/vector.cpp.i
-
-src/vector.s: src/vector.cpp.s
-.PHONY : src/vector.s
-
-# target to generate assembly for a file
-src/vector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2dc2p.dir/build.make CMakeFiles/2dc2p.dir/src/vector.cpp.s
-.PHONY : src/vector.cpp.s
+src/glad.c.s:
+	cd /Users/emkab/dev/2dc2p && $(MAKE) $(MAKESILENT) -f glad/CMakeFiles/glad.dir/build.make glad/CMakeFiles/glad.dir/src/glad.c.s
+.PHONY : src/glad.c.s
 
 # Help Target
 help:
@@ -354,26 +222,10 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... 2dc2p"
 	@echo "... glad"
-	@echo "... src/ball.o"
-	@echo "... src/ball.i"
-	@echo "... src/ball.s"
-	@echo "... src/entity.o"
-	@echo "... src/entity.i"
-	@echo "... src/entity.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/renderWindow.o"
-	@echo "... src/renderWindow.i"
-	@echo "... src/renderWindow.s"
-	@echo "... src/tools.o"
-	@echo "... src/tools.i"
-	@echo "... src/tools.s"
-	@echo "... src/vector.o"
-	@echo "... src/vector.i"
-	@echo "... src/vector.s"
+	@echo "... src/glad.o"
+	@echo "... src/glad.i"
+	@echo "... src/glad.s"
 .PHONY : help
 
 
@@ -385,6 +237,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/emkab/dev/2dc2p && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
