@@ -2,7 +2,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
-#include <Entity.hpp>
+#include <entity.hpp>
 
 Entity::Entity(float p_x, float p_y, SDL_Texture *p_tex) : x(p_x), y(p_y), xVelocity(0), yVelocity(0), tex(p_tex)
 {
